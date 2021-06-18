@@ -6,6 +6,14 @@ https://templatemo.com/tm-526-vanilla
 
 */
 
+ScrollReveal().reveal('.baner-content .first-content', { delay: 200 });
+ScrollReveal({ reset: true });
+ScrollReveal().reveal('.data-personal', { delay: 200 });
+ScrollReveal().reveal('.personal .col-md-6', { delay: 200 });
+ScrollReveal().reveal('.owl-carousel', { delay: 200 });
+ScrollReveal().reveal('.contact-content .col-md-6', { delay: 200 });
+ScrollReveal().reveal('.footer', { delay: 200 });
+
 jQuery(document).ready(function($) {
 
 	'use strict';
