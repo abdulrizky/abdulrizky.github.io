@@ -1,0 +1,38 @@
+{
+  "files": {
+    "main.css": "/static/css/main.7a83138f.chunk.css",
+    "main.js": "/static/js/main.b90efad5.chunk.js",
+    "main.js.map": "/static/js/main.b90efad5.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.63a34efc.js",
+    "runtime-main.js.map": "/static/js/runtime-main.63a34efc.js.map",
+    "static/css/2.365ee758.chunk.css": "/static/css/2.365ee758.chunk.css",
+    "static/js/2.09097965.chunk.js": "/static/js/2.09097965.chunk.js",
+    "static/js/2.09097965.chunk.js.map": "/static/js/2.09097965.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/2.365ee758.chunk.css.map": "/static/css/2.365ee758.chunk.css.map",
+    "static/css/main.7a83138f.chunk.css.map": "/static/css/main.7a83138f.chunk.css.map",
+    "static/js/2.09097965.chunk.js.LICENSE.txt": "/static/js/2.09097965.chunk.js.LICENSE.txt",
+    "static/media/component-info-2.png": "/static/media/component-info-2.5212a3a6.png",
+    "static/media/component-info-card.png": "/static/media/component-info-card.d19a4464.png",
+    "static/media/component-menu.png": "/static/media/component-menu.418bd949.png",
+    "static/media/component-profile-card.png": "/static/media/component-profile-card.52a3ee76.png",
+    "static/media/documentation.png": "/static/media/documentation.014ebef5.png",
+    "static/media/all.min.css": "/static/media/fa-solid-900.efbd5d20.eot",
+    "static/media/landing.jpg": "/static/media/landing.8150f1b0.jpg",
+    "static/media/login.jpg": "/static/media/login.9c1ecd37.jpg",
+    "static/media/pattern_react.png": "/static/media/pattern_react.01996482.png",
+    "static/media/profile.jpg": "/static/media/profile.c62f8a5b.jpg",
+    "static/media/register_bg_2.png": "/static/media/register_bg_2.4f2cb0ac.png",
+    "static/media/team-1-800x800.jpg": "/static/media/team-1-800x800.fa5a7ac2.jpg",
+    "static/media/team-2-800x800.jpg": "/static/media/team-2-800x800.3e08ef14.jpg",
+    "static/media/team-3-800x800.jpg": "/static/media/team-3-800x800.19201574.jpg",
+    "static/media/team-4-470x470.png": "/static/media/team-4-470x470.4ef82ef4.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.63a34efc.js",
+    "static/css/2.365ee758.chunk.css",
+    "static/js/2.09097965.chunk.js",
+    "static/css/main.7a83138f.chunk.css",
+    "static/js/main.b90efad5.chunk.js"
+  ]
+}
