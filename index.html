@@ -1,881 +1,1281 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="id">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Abdul Rizky Darmawan</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <link rel="icon" type="image/png" href="img/favicon/icon.jpg">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/fontAwesome.css">
-    <link rel="stylesheet" href="css/hero-slider.css">
-    <link rel="stylesheet" href="css/templatemo-main.css">
-    <link rel="stylesheet" href="css/owl-carousel.css">
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Abdul Rizky Darmawan — Fullstack & Mobile Developer</title>
+<meta name="description" content="Fullstack Website & Mobile Developer | 5+ tahun pengalaman | Laravel, ReactJS, NextJS, NodeJS, DevOps | Open for freelance projects."/>
+<meta name="keywords" content="Abdul Rizky Darmawan, web developer, mobile developer, fullstack, Laravel, ReactJS, NextJS, DevOps, Indonesia"/>
+<meta name="author" content="Abdul Rizky Darmawan"/>
+<meta property="og:title" content="Abdul Rizky Darmawan — Fullstack & Mobile Developer"/>
+<meta property="og:description" content="Fullstack Website & Mobile Developer, 5+ years building scalable, secure, high-performance systems."/>
+<meta property="og:type" content="website"/>
+<meta name="robots" content="index,follow"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
 
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════
+   TOKENS
+═══════════════════════════════════════════ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --w:#ffffff;
+  --off:#f5f8ff;
+  --b50:#eff6ff;
+  --b100:#dbeafe;
+  --b200:#bfdbfe;
+  --b300:#93c5fd;
+  --b400:#60a5fa;
+  --b500:#3b82f6;
+  --b600:#2563eb;
+  --b700:#1d4ed8;
+  --b800:#1e40af;
+  --s100:#f1f5f9;
+  --s200:#e2e8f0;
+  --s400:#94a3b8;
+  --s500:#64748b;
+  --s600:#475569;
+  --s700:#334155;
+  --s800:#1e293b;
+  --s900:#0f172a;
+  --text:#1e293b;
+  --muted:#64748b;
+  --border:#e2e8f0;
+  --r:14px;
+  --ff:'Poppins',sans-serif;
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:var(--ff);color:var(--text);background:var(--w);overflow-x:hidden;line-height:1.7;font-weight:400}
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:var(--s100)}
+::-webkit-scrollbar-thumb{background:var(--b500);border-radius:99px}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+button{font-family:var(--ff);cursor:pointer;border:none;background:none}
+img{max-width:100%;display:block}
+.container{width:min(1160px,92%);margin-inline:auto}
+section{padding:100px 0}
 
-    <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+/* ═══════════════════════════════════════════
+   TYPOGRAPHY HELPERS
+═══════════════════════════════════════════ */
+.chip{display:inline-flex;align-items:center;gap:7px;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--b600);background:var(--b50);border:1px solid var(--b100);padding:5px 14px;border-radius:99px;margin-bottom:16px}
+.chip i{width:6px;height:6px;border-radius:50%;background:var(--b500);display:inline-block}
+.h2{font-size:clamp(2rem,4vw,3rem);font-weight:800;line-height:1.12;letter-spacing:-.025em;color:var(--s900)}
+.h2 em{font-style:normal;color:var(--b600)}
+.sub{font-size:1rem;color:var(--muted);line-height:1.8;max-width:560px;margin-top:12px}
+.ctr{text-align:center}
+.ctr .sub{margin-inline:auto}
+
+/* ═══════════════════════════════════════════
+   BUTTONS
+═══════════════════════════════════════════ */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 30px;border-radius:99px;font-weight:600;font-size:.9rem;transition:all .25s;cursor:pointer;white-space:nowrap;border:none;font-family:var(--ff)}
+.btn svg{flex-shrink:0;transition:transform .2s}
+.btn:hover svg{transform:translateX(3px)}
+.bp{background:var(--b600);color:#fff;box-shadow:0 4px 24px rgba(37,99,235,.35)}
+.bp:hover{background:var(--b700);transform:translateY(-2px);box-shadow:0 10px 32px rgba(37,99,235,.45)}
+.bo{background:transparent;color:var(--b600);border:2px solid var(--b200)}
+.bo:hover{border-color:var(--b500);background:var(--b50);transform:translateY(-2px)}
+.bw{background:#fff;color:var(--b700);box-shadow:0 4px 20px rgba(0,0,0,.14)}
+.bw:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(0,0,0,.2)}
+
+/* ═══════════════════════════════════════════
+   NAVBAR
+═══════════════════════════════════════════ */
+#nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:20px 0;transition:all .4s}
+#nav.scrolled{background:rgba(255,255,255,.96);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);padding:13px 0;box-shadow:0 2px 24px rgba(0,0,0,.07)}
+.nav-i{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{font-weight:900;font-size:1.2rem;color:var(--b700);letter-spacing:-.03em}
+.logo span{color:var(--b400)}
+.nav-menu{display:flex;align-items:center;gap:4px}
+.nav-menu a{padding:8px 14px;border-radius:8px;font-size:.84rem;font-weight:500;color:var(--s600);transition:all .2s}
+.nav-menu a:hover,.nav-menu a.on{color:var(--b600);background:var(--b50)}
+.nav-r{display:flex;align-items:center;gap:10px}
+.nhire{padding:9px 22px;background:var(--b600);color:#fff;border-radius:99px;font-weight:700;font-size:.82rem;transition:all .25s;letter-spacing:.03em}
+.nhire:hover{background:var(--b700);transform:translateY(-1px)}
+.ham{display:none;flex-direction:column;gap:5px;padding:5px}
+.ham span{display:block;width:22px;height:2px;background:var(--s700);border-radius:2px;transition:all .3s}
+.ham.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.ham.open span:nth-child(2){opacity:0}
+.ham.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+#mob{display:none;position:fixed;inset:0;z-index:999;background:#fff;flex-direction:column;align-items:center;justify-content:center;gap:28px}
+#mob.open{display:flex}
+#mob a{font-size:1.7rem;font-weight:800;color:var(--s800);transition:color .2s}
+#mob a:hover{color:var(--b600)}
+
+/* ═══════════════════════════════════════════
+   HERO — LOKA STYLE: big text + scroll reveal
+═══════════════════════════════════════════ */
+#hero{
+  min-height:100vh;display:flex;flex-direction:column;justify-content:center;
+  background:linear-gradient(150deg,#f0f7ff 0%,#e8f2ff 35%,#f8faff 100%);
+  padding-top:88px;overflow:hidden;position:relative
+}
+.hero-grid-bg{position:absolute;inset:0;pointer-events:none;overflow:hidden;opacity:.5}
+.hero-grid-bg::before{
+  content:'';position:absolute;inset:-100px;
+  background-image:linear-gradient(var(--b200) 1px,transparent 1px),linear-gradient(90deg,var(--b200) 1px,transparent 1px);
+  background-size:80px 80px;
+  animation:gridMove 18s linear infinite
+}
+@keyframes gridMove{to{transform:translateY(80px)}}
+.hero-orb{position:absolute;border-radius:50%;pointer-events:none;filter:blur(80px)}
+.orb1{width:700px;height:700px;background:radial-gradient(circle,rgba(59,130,246,.14),transparent 70%);top:-200px;right:-100px;animation:orbFloat 10s ease-in-out infinite}
+.orb2{width:500px;height:500px;background:radial-gradient(circle,rgba(99,179,255,.1),transparent 70%);bottom:-150px;left:-100px;animation:orbFloat 13s ease-in-out infinite reverse}
+@keyframes orbFloat{0%,100%{transform:translate(0,0)}50%{transform:translate(20px,-30px)}}
+
+.hero-inner{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.hero-live{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--b100);border-radius:99px;padding:7px 16px;font-size:.78rem;font-weight:600;color:var(--b700);margin-bottom:24px;box-shadow:0 2px 12px rgba(59,130,246,.1)}
+.live-dot{width:7px;height:7px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 0 rgba(34,197,94,.6);animation:livePing 2s ease-in-out infinite}
+@keyframes livePing{0%{box-shadow:0 0 0 0 rgba(34,197,94,.5)}70%{box-shadow:0 0 0 8px rgba(34,197,94,0)}100%{box-shadow:0 0 0 0 rgba(34,197,94,0)}}
+
+/* Loka-style: oversized title that scrolls differently */
+.hero-title{font-size:clamp(3rem,6.5vw,5.2rem);font-weight:900;line-height:1.05;letter-spacing:-.04em;color:var(--s900);margin-bottom:22px;overflow:hidden}
+.hero-title .line{display:block;transform:translateY(110%);animation:lineUp .8s cubic-bezier(.4,0,.2,1) forwards}
+.hero-title .line:nth-child(1){animation-delay:.05s}
+.hero-title .line:nth-child(2){animation-delay:.18s}
+.hero-title .line:nth-child(3){animation-delay:.31s}
+.hero-title .grad{background:linear-gradient(135deg,var(--b600) 0%,var(--b400) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+@keyframes lineUp{to{transform:translateY(0)}}
+
+.hero-sub{font-size:1.05rem;color:var(--muted);line-height:1.8;margin-bottom:36px;max-width:500px;opacity:0;animation:fadeUp .8s .5s forwards}
+.hero-btns{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:52px;opacity:0;animation:fadeUp .8s .65s forwards}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+.hero-stats{display:flex;gap:40px;padding-top:36px;border-top:1px solid var(--b100);opacity:0;animation:fadeUp .8s .8s forwards}
+.stn{font-size:2.2rem;font-weight:900;color:var(--b700);line-height:1}
+.stl{font-size:.73rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-top:4px}
+
+/* Avatar */
+.hero-right{display:flex;justify-content:center;align-items:center;position:relative;opacity:0;animation:fadeLeft .9s .3s forwards}
+@keyframes fadeLeft{from{opacity:0;transform:translateX(40px)}to{opacity:1;transform:translateX(0)}}
+.av-wrap{position:relative;width:380px;height:380px}
+.av-ring{width:380px;height:380px;border-radius:50%;background:conic-gradient(var(--b400),var(--b200),var(--b600),var(--b200),var(--b400));padding:4px;animation:spin 10s linear infinite;display:flex;align-items:center;justify-content:center}
+@keyframes spin{to{transform:rotate(360deg)}}
+.av-core{width:100%;height:100%;border-radius:50%;background:linear-gradient(135deg,#dbeafe,#eff6ff);display:flex;align-items:center;justify-content:center;box-shadow:0 24px 64px rgba(59,130,246,.22)}
+.av-init{font-size:5.5rem;font-weight:900;color:var(--b700);letter-spacing:-.04em}
+.av-badge{position:absolute;bottom:24px;right:-14px;background:#fff;border:1px solid var(--b100);border-radius:14px;padding:11px 18px;display:flex;align-items:center;gap:9px;box-shadow:0 8px 32px rgba(0,0,0,.12);animation:floatY 4s ease-in-out infinite}
+@keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+.av-badge-t{font-size:.78rem;font-weight:700;color:var(--s700)}
+.av-chip{position:absolute;background:#fff;border:1px solid var(--b100);border-radius:10px;padding:8px 14px;font-size:.72rem;font-weight:700;color:var(--b700);box-shadow:0 4px 16px rgba(0,0,0,.08)}
+.ac1{top:30px;left:-18px;animation:floatY 5s ease-in-out infinite}
+.ac2{top:100px;right:-28px;animation:floatY 6s ease-in-out infinite reverse}
+.ac3{bottom:90px;left:-28px;animation:floatY 4.5s ease-in-out infinite 1s}
+
+/* ═══════════════════════════════════════════
+   MARQUEE
+═══════════════════════════════════════════ */
+#mq{padding:24px 0;background:#fff;border-top:1px solid var(--border);border-bottom:1px solid var(--border);overflow:hidden}
+.mq-t{position:relative;overflow:hidden}
+.mq-t::before,.mq-t::after{content:'';position:absolute;top:0;bottom:0;width:120px;z-index:2}
+.mq-t::before{left:0;background:linear-gradient(to right,#fff,transparent)}
+.mq-t::after{right:0;background:linear-gradient(to left,#fff,transparent)}
+.mq-b{display:flex;gap:12px;animation:mq 32s linear infinite;width:max-content}
+.mq-b:hover{animation-play-state:paused}
+@keyframes mq{to{transform:translateX(-50%)}}
+.mpill{flex-shrink:0;padding:8px 20px;border-radius:99px;background:var(--b50);border:1px solid var(--b100);font-size:.77rem;font-weight:600;color:var(--b700);white-space:nowrap;transition:all .2s;cursor:default}
+.mpill:hover{background:var(--b100);transform:scale(1.05)}
+
+/* ═══════════════════════════════════════════
+   LOKA-STYLE HORIZONTAL / SPLIT SCROLL SECTION
+   (Services — left sticky, right scrolls)
+═══════════════════════════════════════════ */
+#services{background:var(--w);padding:0}
+.srv-outer{display:grid;grid-template-columns:280px 1fr;min-height:100vh}
+
+.srv-sticky{position:sticky;top:0;height:100vh;display:flex;flex-direction:column;justify-content:center;padding:80px 48px 80px 64px;border-right:1px solid var(--border)}
+.srv-sticky .chip{margin-bottom:20px}
+.srv-sticky h2{font-size:clamp(1.6rem,2.5vw,2.2rem);font-weight:900;line-height:1.15;letter-spacing:-.025em;color:var(--s900);margin-bottom:16px}
+.srv-sticky p{font-size:.88rem;color:var(--muted);line-height:1.8;margin-bottom:28px}
+.srv-nav{display:flex;flex-direction:column;gap:6px}
+.srv-nav-item{padding:10px 14px;border-radius:10px;font-size:.83rem;font-weight:600;color:var(--muted);cursor:pointer;transition:all .25s;display:flex;align-items:center;gap:10px;border:1px solid transparent}
+.srv-nav-item.on{color:var(--b700);background:var(--b50);border-color:var(--b100)}
+.srv-nav-item::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--b200);flex-shrink:0;transition:background .2s}
+.srv-nav-item.on::before{background:var(--b500)}
+
+.srv-right{padding:80px 64px 80px 64px}
+.srv-item{min-height:85vh;display:flex;flex-direction:column;justify-content:center;padding:60px 0;border-bottom:1px solid var(--border)}
+.srv-item:last-child{border-bottom:none}
+.srv-num{font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--b400);margin-bottom:14px}
+.srv-name{font-size:clamp(1.8rem,3vw,2.8rem);font-weight:900;letter-spacing:-.03em;color:var(--s900);margin-bottom:16px;line-height:1.1}
+.srv-name em{font-style:normal;color:var(--b600)}
+.srv-desc{font-size:.95rem;color:var(--muted);line-height:1.85;max-width:600px;margin-bottom:28px}
+.srv-tags{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:32px}
+.stag{padding:6px 16px;border-radius:99px;background:var(--b50);border:1px solid var(--b100);font-size:.75rem;font-weight:600;color:var(--b700)}
+.srv-deliverables{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-top:8px}
+.sdel{background:var(--off);border:1px solid var(--border);border-radius:12px;padding:16px;font-size:.82rem;color:var(--s700);font-weight:500;display:flex;align-items:center;gap:10px}
+.sdel span{font-size:1.1rem}
+
+/* ═══════════════════════════════════════════
+   PRICING — pixel-true style
+═══════════════════════════════════════════ */
+#pricing{background:linear-gradient(175deg,var(--b50) 0%,var(--w) 100%)}
+.ptoggle{display:flex;align-items:center;justify-content:center;gap:14px;margin:28px 0 52px;font-size:.9rem;font-weight:600;color:var(--muted)}
+.toggle-wrap{width:52px;height:28px;border-radius:99px;background:var(--b600);position:relative;cursor:pointer;transition:background .3s}
+.toggle-wrap::after{content:'';position:absolute;top:3px;left:3px;width:22px;height:22px;border-radius:50%;background:#fff;transition:transform .3s;box-shadow:0 2px 6px rgba(0,0,0,.15)}
+.toggle-wrap.yearly::after{transform:translateX(24px)}
+.save-badge{background:var(--b600);color:#fff;font-size:.68rem;font-weight:700;padding:3px 9px;border-radius:99px;letter-spacing:.06em}
+
+.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.pc{background:#fff;border:2px solid var(--border);border-radius:22px;padding:34px 28px;position:relative;transition:all .35s;overflow:hidden}
+.pc::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--b400),var(--b700));transform:scaleX(0);transform-origin:left;transition:transform .35s}
+.pc:hover{border-color:var(--b300);box-shadow:0 24px 60px rgba(59,130,246,.14);transform:translateY(-8px)}
+.pc:hover::before{transform:scaleX(1)}
+.pc.popular{border-color:var(--b500);box-shadow:0 16px 48px rgba(59,130,246,.2)}
+.pc.popular::before{transform:scaleX(1)}
+.pop-badge{position:absolute;top:18px;right:18px;background:var(--b600);color:#fff;font-size:.67rem;font-weight:700;padding:4px 12px;border-radius:99px;letter-spacing:.08em;text-transform:uppercase}
+.pc-icon{width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,var(--b500),var(--b700));display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:18px}
+.pc-name{font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:6px}
+.pc-price{display:flex;align-items:baseline;gap:4px;margin-bottom:4px}
+.pc-amt{font-size:2.8rem;font-weight:900;color:var(--s900);line-height:1;letter-spacing:-.03em}
+.pc-per{font-size:.85rem;color:var(--muted);font-weight:500}
+.pc-desc{font-size:.83rem;color:var(--muted);margin-bottom:22px;line-height:1.65}
+.pc-features{display:flex;flex-direction:column;gap:10px;margin-bottom:28px}
+.pf{display:flex;align-items:flex-start;gap:10px;font-size:.83rem;color:var(--s600);line-height:1.5}
+.pf::before{content:'✓';flex-shrink:0;width:18px;height:18px;border-radius:50%;background:var(--b50);border:1px solid var(--b200);display:flex;align-items:center;justify-content:center;font-size:.65rem;font-weight:800;color:var(--b600)}
+.pc-cta{display:block;text-align:center;padding:13px;border-radius:99px;font-weight:700;font-size:.88rem;transition:all .25s;border:2px solid var(--b200);color:var(--b700)}
+.pc-cta:hover{background:var(--b600);color:#fff;border-color:var(--b600);transform:translateY(-2px)}
+.pc.popular .pc-cta{background:var(--b600);color:#fff;border-color:var(--b600)}
+.pc.popular .pc-cta:hover{background:var(--b700)}
+.price-note{text-align:center;margin-top:32px;font-size:.83rem;color:var(--muted)}
+.price-note span{color:var(--b600);font-weight:600}
+
+/* ═══════════════════════════════════════════
+   PORTFOLIO / OUR WORK — Loka-style grid
+═══════════════════════════════════════════ */
+#work{background:var(--w);padding:100px 0}
+.work-filter{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:32px 0 52px}
+.wf{padding:9px 22px;border-radius:99px;font-size:.82rem;font-weight:600;border:2px solid var(--border);color:var(--muted);cursor:pointer;transition:all .2s}
+.wf.on,.wf:hover{border-color:var(--b500);color:var(--b600);background:var(--b50)}
+.work-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:20px}
+.wc{grid-column:span 6;border-radius:20px;overflow:hidden;position:relative;background:var(--b50);border:1px solid var(--border);transition:all .35s;cursor:pointer}
+.wc.wide{grid-column:span 8}
+.wc.narrow{grid-column:span 4}
+.wc:hover{transform:translateY(-6px);box-shadow:0 24px 60px rgba(59,130,246,.16);border-color:var(--b300)}
+.wc-img{height:240px;background:linear-gradient(135deg,var(--b100),var(--b200));display:flex;align-items:center;justify-content:center;font-size:3.5rem;position:relative;overflow:hidden;transition:transform .4s}
+.wc:hover .wc-img{transform:scale(1.04)}
+.wc-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(37,99,235,.15),transparent)}
+.wc-body{padding:22px 24px}
+.wc-cat{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--b500);margin-bottom:6px}
+.wc-name{font-size:1.05rem;font-weight:700;color:var(--s900);margin-bottom:6px}
+.wc-desc{font-size:.82rem;color:var(--muted);line-height:1.65}
+.wc-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.wctag{padding:3px 10px;border-radius:99px;background:var(--b50);border:1px solid var(--b100);font-size:.68rem;font-weight:600;color:var(--b700)}
+.work-cta-wrap{text-align:center;margin-top:52px}
+
+/* ═══════════════════════════════════════════
+   PLATFORM — how it works
+═══════════════════════════════════════════ */
+#platform{background:var(--s900);color:#fff;padding:100px 0;overflow:hidden;position:relative}
+#platform::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(59,130,246,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(59,130,246,.06) 1px,transparent 1px);background-size:70px 70px;pointer-events:none}
+.plat-top{text-align:center;margin-bottom:72px;position:relative;z-index:2}
+.plat-top .chip{background:rgba(59,130,246,.15);border-color:rgba(59,130,246,.3);color:var(--b300)}
+.plat-top .h2{color:#fff}
+.plat-top .h2 em{color:var(--b400)}
+.plat-top .sub{color:rgba(255,255,255,.6)}
+.plat-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;position:relative;z-index:2}
+.plat-step{padding:40px 28px;border:1px solid rgba(59,130,246,.15);position:relative;overflow:hidden;transition:all .35s;cursor:default}
+.plat-step::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(59,130,246,.08),transparent);opacity:0;transition:opacity .35s}
+.plat-step:hover::before{opacity:1}
+.plat-step:hover{border-color:rgba(59,130,246,.35)}
+.plat-n{font-size:4rem;font-weight:900;color:rgba(59,130,246,.12);line-height:1;margin-bottom:16px;transition:color .3s}
+.plat-step:hover .plat-n{color:rgba(59,130,246,.25)}
+.plat-ico{font-size:1.8rem;margin-bottom:12px}
+.plat-title{font-size:1rem;font-weight:700;color:#fff;margin-bottom:8px}
+.plat-desc{font-size:.83rem;color:rgba(255,255,255,.55);line-height:1.75}
+.plat-cta{position:relative;z-index:2;text-align:center;margin-top:64px}
+.plat-cta p{color:rgba(255,255,255,.65);font-size:.95rem;margin-bottom:22px}
+
+/* ═══════════════════════════════════════════
+   EXPERIENCE — sticky sidebar + timeline
+═══════════════════════════════════════════ */
+#experience{background:var(--off)}
+.exp-wrap{display:grid;grid-template-columns:320px 1fr;gap:80px;align-items:start}
+.exp-side{position:sticky;top:100px}
+.exp-side-title{font-size:1.6rem;font-weight:900;color:var(--s900);margin-bottom:12px}
+.exp-side-sub{font-size:.87rem;color:var(--muted);line-height:1.8;margin-bottom:28px}
+.exp-total{background:linear-gradient(135deg,var(--b600),var(--b800));border-radius:20px;padding:32px;color:#fff;text-align:center}
+.exp-n{font-size:3.8rem;font-weight:900;line-height:1}
+.exp-l{font-size:.78rem;font-weight:600;opacity:.75;margin-top:8px;text-transform:uppercase;letter-spacing:.08em}
+.tl{position:relative;padding-left:32px}
+.tl::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--b500),transparent)}
+.tl-i{position:relative;margin-bottom:32px}
+.tl-i:last-child{margin-bottom:0}
+.tl-dot{position:absolute;left:-40px;top:26px;width:16px;height:16px;border-radius:50%;background:var(--b500);border:3px solid #fff;box-shadow:0 0 0 3px var(--b200)}
+.tl-cur .tl-dot{background:var(--b600);animation:dotGlow 2s infinite}
+@keyframes dotGlow{0%,100%{box-shadow:0 0 0 3px var(--b200)}50%{box-shadow:0 0 0 7px rgba(59,130,246,.2)}}
+.tl-card{background:#fff;border:1px solid var(--border);border-radius:20px;padding:26px 28px;transition:all .3s}
+.tl-card:hover{border-color:var(--b300);box-shadow:0 8px 32px rgba(59,130,246,.1);transform:translateY(-2px)}
+.tl-top{display:flex;flex-wrap:wrap;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:6px}
+.tl-co{font-weight:800;font-size:1.05rem;color:var(--s900)}
+.tl-bge{font-size:.67rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;padding:4px 11px;border-radius:99px;border:1px solid var(--b200);color:var(--b700);background:var(--b50)}
+.tl-cur .tl-bge{background:rgba(34,197,94,.08);border-color:rgba(34,197,94,.25);color:#15803d}
+.tl-period{font-size:.77rem;font-weight:500;color:var(--muted);margin-bottom:4px}
+.tl-type{font-size:.77rem;color:var(--b500);font-weight:500}
+.tl-role{font-weight:700;font-size:.92rem;color:var(--b700);margin:10px 0 8px}
+.tl-desc{font-size:.86rem;color:var(--muted);line-height:1.75}
+
+/* ═══════════════════════════════════════════
+   ABOUT (short)
+═══════════════════════════════════════════ */
+#about{background:var(--w)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.about-card{background:linear-gradient(135deg,var(--b50),var(--b100));border-radius:24px;padding:52px 40px;text-align:center;border:1px solid var(--b200);position:relative;overflow:hidden}
+.about-card::before{content:'';position:absolute;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(59,130,246,.15),transparent 70%);top:-80px;right:-80px;pointer-events:none}
+.av-big{font-size:6rem;font-weight:900;color:var(--b300);line-height:1;margin-bottom:8px}
+.av-name{font-size:1.3rem;font-weight:800;color:var(--b800)}
+.av-role{font-size:.85rem;color:var(--b600);font-weight:500;margin-top:4px}
+.av-pills{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:22px}
+.apill{padding:5px 14px;border-radius:99px;background:#fff;border:1px solid var(--b200);font-size:.73rem;font-weight:600;color:var(--b700)}
+.about-facts{display:flex;flex-direction:column;gap:12px;margin-top:28px}
+.af{display:flex;align-items:center;gap:14px;padding:14px 18px;border-radius:var(--r);background:var(--off);border:1px solid var(--border);transition:all .25s}
+.af:hover{border-color:var(--b300);transform:translateX(5px)}
+.af-ico{width:38px;height:38px;border-radius:10px;background:var(--b50);border:1px solid var(--b100);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+.af-v{font-weight:600;font-size:.9rem;color:var(--s800)}
+.af-m{font-size:.73rem;color:var(--muted)}
+
+/* ═══════════════════════════════════════════
+   TESTIMONIALS
+═══════════════════════════════════════════ */
+#testi{background:var(--off)}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:52px}
+.tc{background:#fff;border:1px solid var(--border);border-radius:20px;padding:28px;transition:all .3s;position:relative;overflow:hidden}
+.tc::before{content:'\201C';position:absolute;top:16px;left:20px;font-size:4rem;color:var(--b100);font-family:Georgia,serif;line-height:1;pointer-events:none}
+.tc:hover{border-color:var(--b300);transform:translateY(-5px);box-shadow:0 16px 48px rgba(59,130,246,.1)}
+.tc-stars{color:#f59e0b;font-size:.9rem;margin-bottom:14px;padding-top:16px}
+.tc-text{font-size:.87rem;color:var(--muted);line-height:1.8;margin-bottom:20px;font-style:italic}
+.tc-author{display:flex;align-items:center;gap:12px}
+.tc-av{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--b400),var(--b700));display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.85rem;color:#fff;flex-shrink:0}
+.tc-name{font-weight:700;font-size:.87rem;color:var(--s800)}
+.tc-pos{font-size:.75rem;color:var(--muted)}
+
+/* ═══════════════════════════════════════════
+   FAQ
+═══════════════════════════════════════════ */
+#faq{background:var(--w)}
+.faq-wrap{max-width:760px;margin:52px auto 0}
+.fq{border:1.5px solid var(--border);border-radius:16px;overflow:hidden;margin-bottom:12px;transition:border-color .2s}
+.fq.open{border-color:var(--b300)}
+.fq-q{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:20px 24px;cursor:pointer;font-weight:600;font-size:.94rem;color:var(--s800);transition:color .2s}
+.fq-q:hover{color:var(--b700)}
+.fq-ico{width:28px;height:28px;border-radius:50%;background:var(--b50);border:1px solid var(--b100);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:.8rem;color:var(--b600);transition:all .3s}
+.fq.open .fq-ico{transform:rotate(45deg);background:var(--b600);color:#fff;border-color:var(--b600)}
+.fq-a{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.fq-ai{padding:0 24px 20px;font-size:.87rem;color:var(--muted);line-height:1.8}
+
+/* ═══════════════════════════════════════════
+   CONTACT
+═══════════════════════════════════════════ */
+#contact{background:linear-gradient(145deg,var(--b700),var(--b800));position:relative;overflow:hidden}
+#contact::before{content:'';position:absolute;width:900px;height:900px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.05),transparent 70%);top:-300px;right:-200px;pointer-events:none}
+.contact-in{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;position:relative;z-index:2}
+.cl *{color:#fff}
+.cl .chip{background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.25);color:#fff}
+.cl .h2{color:#fff}
+.cl em{color:var(--b300) !important}
+.cl .sub{color:rgba(255,255,255,.72) !important}
+.clinks{display:flex;flex-direction:column;gap:12px;margin-top:30px}
+.clink{display:flex;align-items:center;gap:14px;padding:15px 20px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:14px;color:#fff;transition:all .2s}
+.clink:hover{background:rgba(255,255,255,.18);transform:translateX(5px)}
+.clink-ico{width:38px;height:38px;border-radius:10px;background:rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+.clink-lbl{font-size:.72rem;font-weight:500;opacity:.7;text-transform:uppercase;letter-spacing:.06em}
+.clink-v{font-weight:600;font-size:.9rem;margin-top:1px}
+
+.cf-card{background:#fff;border-radius:24px;padding:40px;box-shadow:0 32px 80px rgba(0,0,0,.22)}
+.cf-title{font-size:1.25rem;font-weight:800;color:var(--s900);margin-bottom:4px}
+.cf-sub{font-size:.83rem;color:var(--muted);margin-bottom:24px}
+.fgrp{margin-bottom:16px}
+.fgrp label{display:block;font-size:.8rem;font-weight:600;color:var(--s600);margin-bottom:7px}
+.fgrp input,.fgrp textarea{width:100%;padding:12px 16px;border-radius:10px;border:1.5px solid var(--border);font-family:var(--ff);font-size:.88rem;color:var(--text);transition:all .2s;resize:none}
+.fgrp input:focus,.fgrp textarea:focus{outline:none;border-color:var(--b400);box-shadow:0 0 0 3px rgba(59,130,246,.1)}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.fsub{width:100%;padding:14px;border-radius:99px;background:var(--b600);color:#fff;font-family:var(--ff);font-weight:700;font-size:.9rem;border:none;cursor:pointer;transition:all .25s;display:flex;align-items:center;justify-content:center;gap:8px}
+.fsub:hover{background:var(--b700);transform:translateY(-2px);box-shadow:0 8px 24px rgba(37,99,235,.4)}
+.fnote{font-size:.73rem;color:var(--muted);text-align:center;margin-top:12px}
+.fsuccess{display:none;text-align:center;padding:24px;color:var(--b700);font-weight:700;font-size:1.05rem}
+
+/* ═══════════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════════ */
+footer{background:var(--s900);padding:64px 0 28px}
+.ft-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
+.ft-brand .logo{color:#fff;font-size:1.25rem}
+.ft-brand p{font-size:.83rem;color:var(--s400);line-height:1.8;margin-top:14px;max-width:260px}
+.ft-socials{display:flex;gap:10px;margin-top:20px}
+.fsoc{width:36px;height:36px;border-radius:10px;background:var(--s800);border:1px solid var(--s700);display:flex;align-items:center;justify-content:center;color:var(--s400);font-size:.78rem;font-weight:700;transition:all .2s}
+.fsoc:hover{background:var(--b600);border-color:var(--b600);color:#fff;transform:translateY(-2px)}
+.fc h4{font-size:.77rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--s400);margin-bottom:18px}
+.fc ul{display:flex;flex-direction:column;gap:10px}
+.fc ul a{font-size:.83rem;color:var(--s500);transition:color .2s}
+.fc ul a:hover{color:var(--b400)}
+.ft-bot{border-top:1px solid var(--s800);padding-top:24px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;font-size:.78rem;color:var(--s500)}
+.ft-bot span{color:var(--b400)}
+
+/* ═══════════════════════════════════════════
+   SCROLL-REVEAL UTILITY
+═══════════════════════════════════════════ */
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-left{opacity:0;transform:translateX(-40px);transition:opacity .7s ease,transform .7s ease}
+.reveal-left.visible{opacity:1;transform:translateX(0)}
+.reveal-right{opacity:0;transform:translateX(40px);transition:opacity .7s ease,transform .7s ease}
+.reveal-right.visible{opacity:1;transform:translateX(0)}
+.reveal-scale{opacity:0;transform:scale(.92);transition:opacity .7s ease,transform .7s ease}
+.reveal-scale.visible{opacity:1;transform:scale(1)}
+
+/* delay helpers */
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
+.d4{transition-delay:.4s}.d5{transition-delay:.5s}.d6{transition-delay:.6s}
+
+/* ═══════════════════════════════════════════
+   SCROLL TOP
+═══════════════════════════════════════════ */
+#st{position:fixed;bottom:28px;right:28px;z-index:99;width:44px;height:44px;border-radius:50%;background:var(--b600);color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.1rem;box-shadow:0 4px 20px rgba(37,99,235,.4);opacity:0;transform:translateY(20px);transition:all .3s}
+#st.show{opacity:1;transform:translateY(0)}
+#st:hover{background:var(--b700);transform:translateY(-2px)}
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════ */
+@media(max-width:1024px){
+  .srv-outer{grid-template-columns:240px 1fr}
+  .srv-sticky{padding:60px 32px 60px 40px}
+  .srv-right{padding:60px 40px}
+  .price-grid{grid-template-columns:1fr}
+  .plat-steps{grid-template-columns:1fr 1fr}
+  .exp-wrap{grid-template-columns:1fr;gap:40px}
+  .exp-side{position:static}
+  .ft-grid{grid-template-columns:1fr 1fr}
+  .work-grid{grid-template-columns:1fr 1fr}
+  .wc,.wc.wide,.wc.narrow{grid-column:span 1}
+}
+@media(max-width:768px){
+  section{padding:72px 0}
+  .hero-inner{grid-template-columns:1fr;text-align:center}
+  .hero-right{order:-1;margin-bottom:32px}
+  .hero-sub,.hero-btns,.hero-stats{margin-inline:auto}
+  .hero-btns{justify-content:center}
+  .hero-stats{justify-content:center;gap:24px}
+  .av-wrap{width:260px;height:260px}
+  .av-ring{width:260px;height:260px}
+  .av-init{font-size:3.8rem}
+  .ac1,.ac2,.ac3{display:none}
+  .about-grid,.contact-in,.testi-grid{grid-template-columns:1fr}
+  .srv-outer{grid-template-columns:1fr;display:block}
+  .srv-sticky{position:static;height:auto;border-right:none;border-bottom:1px solid var(--border);padding:48px 24px 32px}
+  .srv-nav{display:none}
+  .srv-right{padding:40px 24px}
+  .srv-item{min-height:auto;padding:40px 0}
+  .work-grid{grid-template-columns:1fr}
+  .wc,.wc.wide,.wc.narrow{grid-column:span 1}
+  .plat-steps{grid-template-columns:1fr}
+  .frow{grid-template-columns:1fr}
+  .ft-grid{grid-template-columns:1fr}
+  .nav-menu,.nav-r{display:none}
+  .ham{display:flex}
+  .price-grid{grid-template-columns:1fr}
+}
+</style>
 </head>
-<!--
-    Vanilla Template
-    https://templatemo.com/tm-526-vanilla
--->
-
 <body>
 
-    <div class="fixed-side-navbar">
-        <ul class="nav flex-column">
-            <li class="nav-item"><a class="nav-link" href="#home"><span>Pembukaan</span></a></li>
-            <li class="nav-item"><a class="nav-link" href="#data"><span>Data</span></a></li>
-            <li class="nav-item"><a class="nav-link" href="#portfolio"><span>Portfolio</span></a></li>
+<!-- ════════ NAVBAR ════════ -->
+<nav id="nav">
+  <div class="container nav-i">
+    <a href="#hero" class="logo">Abdul<span>.</span>dev</a>
+    <ul class="nav-menu">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#platform">How It Works</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <div class="nav-r">
+      <a href="#contact" class="nhire">✉ Hire Me</a>
+    </div>
+    <button class="ham" id="ham" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div id="mob" role="dialog" aria-modal="true" aria-label="Mobile menu">
+  <a href="#about" class="ml">About</a>
+  <a href="#services" class="ml">Services</a>
+  <a href="#work" class="ml">Work</a>
+  <a href="#pricing" class="ml">Pricing</a>
+  <a href="#platform" class="ml">How It Works</a>
+  <a href="#experience" class="ml">Experience</a>
+  <a href="#faq" class="ml">FAQ</a>
+  <a href="#contact" class="ml">Contact</a>
+</div>
+
+<!-- ════════ HERO ════════ -->
+<section id="hero">
+  <div class="hero-grid-bg" aria-hidden="true"></div>
+  <div class="hero-orb orb1" aria-hidden="true"></div>
+  <div class="hero-orb orb2" aria-hidden="true"></div>
+  <div class="container">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-live"><span class="live-dot"></span>Open to Projects</div>
+        <h1 class="hero-title">
+          <span class="line">Stop Talking.</span>
+          <span class="line">Start <span class="grad">Building.</span></span>
+          <span class="line" style="font-size:clamp(1.4rem,3vw,2.4rem);font-weight:600;color:var(--s600);letter-spacing:-.01em">Fullstack &amp; Mobile Developer</span>
+        </h1>
+        <p class="hero-sub">Saya <strong>Abdul Rizky Darmawan</strong> — 5+ tahun membangun sistem web &amp; mobile yang scalable, aman, dan berperforma tinggi. Laravel → ReactJS → DevOps. Satu developer, end-to-end solution.</p>
+        <div class="hero-btns">
+          <a href="#contact" class="btn bp">✉ Diskusi Project <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          <a href="#work" class="btn bo">Lihat Portfolio</a>
+        </div>
+        <div class="hero-stats">
+          <div><div class="stn" data-count="5">0</div><div class="stl">Years Exp</div></div>
+          <div><div class="stn" data-count="3">0</div><div class="stl">Companies</div></div>
+          <div><div class="stn" data-count="20">0</div><div class="stl">Projects</div></div>
+          <div><div class="stn" data-count="12">0</div><div class="stl">Technologies</div></div>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="av-wrap">
+          <div class="av-ring"><div class="av-core"><span class="av-init">ARD</span></div></div>
+          <div class="av-badge"><span>🟢</span><span class="av-badge-t">Open to Work</span></div>
+          <div class="av-chip ac1">Laravel Expert</div>
+          <div class="av-chip ac2">React · Next · RN</div>
+          <div class="av-chip ac3">DevOps Ready</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ MARQUEE ════════ -->
+<div id="mq" aria-hidden="true">
+  <div class="mq-t container" style="overflow:hidden;position:relative">
+    <div class="mq-b">
+      <span class="mpill">PHP · Laravel</span><span class="mpill">CodeIgniter 3/4</span><span class="mpill">JavaScript</span><span class="mpill">TypeScript</span><span class="mpill">ReactJS</span><span class="mpill">NextJS</span><span class="mpill">NodeJS</span><span class="mpill">ExpressJS</span><span class="mpill">React Native</span><span class="mpill">MySQL · Oracle</span><span class="mpill">NoSQL</span><span class="mpill">REST API</span><span class="mpill">VPS · Cloud</span><span class="mpill">CI/CD Pipeline</span><span class="mpill">DevOps</span><span class="mpill">Microservice</span><span class="mpill">Clean Code</span><span class="mpill">Mobile Dev</span><span class="mpill">System Design</span><span class="mpill">Security &amp; Auth</span>
+      <span class="mpill">PHP · Laravel</span><span class="mpill">CodeIgniter 3/4</span><span class="mpill">JavaScript</span><span class="mpill">TypeScript</span><span class="mpill">ReactJS</span><span class="mpill">NextJS</span><span class="mpill">NodeJS</span><span class="mpill">ExpressJS</span><span class="mpill">React Native</span><span class="mpill">MySQL · Oracle</span><span class="mpill">NoSQL</span><span class="mpill">REST API</span><span class="mpill">VPS · Cloud</span><span class="mpill">CI/CD Pipeline</span><span class="mpill">DevOps</span><span class="mpill">Microservice</span><span class="mpill">Clean Code</span><span class="mpill">Mobile Dev</span><span class="mpill">System Design</span><span class="mpill">Security &amp; Auth</span>
+    </div>
+  </div>
+</div>
+
+<!-- ════════ SERVICES — LOKA STICKY LEFT ════════ -->
+<section id="services">
+  <div class="srv-outer">
+    <!-- LEFT STICKY -->
+    <div class="srv-sticky">
+      <div class="chip"><i></i>Services</div>
+      <h2 style="font-size:1.5rem;font-weight:900;color:var(--s900);line-height:1.2;margin-bottom:12px;letter-spacing:-.02em">What I <em style="color:var(--b600)">Build</em></h2>
+      <p>Scroll untuk melihat semua layanan yang tersedia — web, mobile, hingga DevOps.</p>
+      <nav class="srv-nav" id="srvNav" aria-label="Services navigation">
+        <div class="srv-nav-item on" data-target="s1">Web Development</div>
+        <div class="srv-nav-item" data-target="s2">Mobile Development</div>
+        <div class="srv-nav-item" data-target="s3">Backend &amp; API</div>
+        <div class="srv-nav-item" data-target="s4">DevOps &amp; Infrastructure</div>
+        <div class="srv-nav-item" data-target="s5">System Architecture</div>
+      </nav>
+    </div>
+
+    <!-- RIGHT SCROLLS -->
+    <div class="srv-right">
+      <div class="srv-item" id="s1">
+        <div class="srv-num">01 / 05</div>
+        <div class="srv-name">Web <em>Development</em></div>
+        <p class="srv-desc">Membangun web application end-to-end — dari landing page berkinerja tinggi hingga platform enterprise kompleks. Expert di Laravel, ReactJS, dan NextJS dengan fokus pada performa, SEO, dan user experience.</p>
+        <div class="srv-tags"><span class="stag">Laravel</span><span class="stag">ReactJS</span><span class="stag">NextJS</span><span class="stag">TypeScript</span><span class="stag">CodeIgniter</span><span class="stag">Node.js</span></div>
+        <div class="srv-deliverables">
+          <div class="sdel"><span>🏠</span>Landing Page</div>
+          <div class="sdel"><span>🛒</span>E-Commerce</div>
+          <div class="sdel"><span>📊</span>Dashboard Admin</div>
+          <div class="sdel"><span>🔌</span>REST API</div>
+          <div class="sdel"><span>🔐</span>Auth System</div>
+          <div class="sdel"><span>📱</span>Progressive Web App</div>
+        </div>
+      </div>
+
+      <div class="srv-item" id="s2">
+        <div class="srv-num">02 / 05</div>
+        <div class="srv-name">Mobile <em>Development</em></div>
+        <p class="srv-desc">Saya tidak memisahkan mobile dari web — sebagai fullstack developer, saya membangun aplikasi mobile yang terhubung langsung dengan backend yang sama. Cross-platform dengan React Native dan Expo, Android &amp; iOS dari satu codebase.</p>
+        <div class="srv-tags"><span class="stag">React Native</span><span class="stag">Expo</span><span class="stag">iOS &amp; Android</span><span class="stag">Cross-platform</span><span class="stag">PWA</span></div>
+        <div class="srv-deliverables">
+          <div class="sdel"><span>📱</span>Aplikasi iOS &amp; Android</div>
+          <div class="sdel"><span>🔄</span>Satu Codebase</div>
+          <div class="sdel"><span>🔔</span>Push Notifications</div>
+          <div class="sdel"><span>🗺️</span>Maps Integration</div>
+          <div class="sdel"><span>💳</span>Payment Gateway</div>
+          <div class="sdel"><span>📷</span>Camera &amp; Media</div>
+        </div>
+      </div>
+
+      <div class="srv-item" id="s3">
+        <div class="srv-num">03 / 05</div>
+        <div class="srv-name">Backend &amp; <em>API Design</em></div>
+        <p class="srv-desc">Merancang dan membangun backend yang robust, scalable, dan aman. Dari REST API hingga microservice architecture, dengan database yang teroptimasi dan sistem keamanan berlapis.</p>
+        <div class="srv-tags"><span class="stag">MySQL</span><span class="stag">NoSQL</span><span class="stag">Oracle</span><span class="stag">REST API</span><span class="stag">Microservice</span><span class="stag">JWT / OAuth</span></div>
+        <div class="srv-deliverables">
+          <div class="sdel"><span>🔌</span>API Design</div>
+          <div class="sdel"><span>🗄️</span>Database Design</div>
+          <div class="sdel"><span>🔐</span>Auth &amp; Security</div>
+          <div class="sdel"><span>⚡</span>Caching Layer</div>
+          <div class="sdel"><span>🔗</span>Third-party Integration</div>
+          <div class="sdel"><span>📊</span>Analytics &amp; Logging</div>
+        </div>
+      </div>
+
+      <div class="srv-item" id="s4">
+        <div class="srv-num">04 / 05</div>
+        <div class="srv-name">DevOps &amp; <em>Infrastructure</em></div>
+        <p class="srv-desc">Setup dan pengelolaan infrastruktur server yang handal. CI/CD pipeline, automated deployment, monitoring, dan server management untuk memastikan sistem Anda selalu online dan berperforma optimal.</p>
+        <div class="srv-tags"><span class="stag">VPS</span><span class="stag">Cloud</span><span class="stag">GitHub Actions</span><span class="stag">Docker</span><span class="stag">Nginx</span><span class="stag">Linux</span></div>
+        <div class="srv-deliverables">
+          <div class="sdel"><span>🚀</span>CI/CD Setup</div>
+          <div class="sdel"><span>🖥️</span>Server Config</div>
+          <div class="sdel"><span>📈</span>Monitoring</div>
+          <div class="sdel"><span>🔒</span>SSL &amp; Security</div>
+          <div class="sdel"><span>💾</span>Backup Strategy</div>
+          <div class="sdel"><span>⚡</span>Performance Tuning</div>
+        </div>
+      </div>
+
+      <div class="srv-item" id="s5">
+        <div class="srv-num">05 / 05</div>
+        <div class="srv-name">System <em>Architecture</em></div>
+        <p class="srv-desc">Konsultasi dan perancangan arsitektur sistem yang tepat untuk bisnis Anda. Dari monolith ke microservice, dari startup sederhana hingga platform enterprise — memastikan sistem Anda siap tumbuh bersama bisnis.</p>
+        <div class="srv-tags"><span class="stag">Microservice</span><span class="stag">Scalability</span><span class="stag">Clean Code</span><span class="stag">System Design</span><span class="stag">Tech Consulting</span></div>
+        <div class="srv-deliverables">
+          <div class="sdel"><span>🏗️</span>Architecture Review</div>
+          <div class="sdel"><span>📐</span>System Blueprint</div>
+          <div class="sdel"><span>🧩</span>Tech Stack Advice</div>
+          <div class="sdel"><span>📋</span>Code Review</div>
+          <div class="sdel"><span>👥</span>Team Mentoring</div>
+          <div class="sdel"><span>🔄</span>Refactoring</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ PORTFOLIO / WORK ════════ -->
+<section id="work">
+  <div class="container">
+    <div class="ctr reveal">
+      <div class="chip"><i></i>Portfolio</div>
+      <h2 class="h2">Recent <em>Work</em></h2>
+      <p class="sub">Proyek-proyek pilihan yang menunjukkan kemampuan end-to-end development.</p>
+    </div>
+    <div class="work-filter reveal d1">
+      <button class="wf on" data-filter="all">All Projects</button>
+      <button class="wf" data-filter="web">Web App</button>
+      <button class="wf" data-filter="mobile">Mobile</button>
+      <button class="wf" data-filter="api">Backend / API</button>
+      <button class="wf" data-filter="devops">DevOps</button>
+    </div>
+    <div class="work-grid">
+      <div class="wc wide reveal d1" data-cat="web">
+        <div class="wc-img">🛒</div>
+        <div class="wc-body">
+          <div class="wc-cat">Web App · E-Commerce</div>
+          <div class="wc-name">Multi-Vendor Marketplace Platform</div>
+          <p class="wc-desc">Platform e-commerce multi-vendor dengan fitur manajemen toko, payment gateway, real-time order tracking, dan admin dashboard analytics.</p>
+          <div class="wc-tags"><span class="wctag">Laravel</span><span class="wctag">ReactJS</span><span class="wctag">MySQL</span><span class="wctag">Midtrans</span></div>
+        </div>
+      </div>
+      <div class="wc narrow reveal d2" data-cat="mobile">
+        <div class="wc-img">📱</div>
+        <div class="wc-body">
+          <div class="wc-cat">Mobile App · Fintech</div>
+          <div class="wc-name">Digital Wallet &amp; Transfer App</div>
+          <p class="wc-desc">Aplikasi dompet digital cross-platform dengan fitur transfer, topup, dan riwayat transaksi real-time.</p>
+          <div class="wc-tags"><span class="wctag">React Native</span><span class="wctag">NodeJS</span><span class="wctag">MongoDB</span></div>
+        </div>
+      </div>
+      <div class="wc narrow reveal d3" data-cat="api">
+        <div class="wc-img">🔌</div>
+        <div class="wc-body">
+          <div class="wc-cat">Backend · API</div>
+          <div class="wc-name">ISP Customer Management API</div>
+          <p class="wc-desc">REST API untuk manajemen pelanggan ISP — billing, bandwidth monitoring, dan ticketing system terintegrasi.</p>
+          <div class="wc-tags"><span class="wctag">Laravel</span><span class="wctag">Oracle</span><span class="wctag">REST API</span></div>
+        </div>
+      </div>
+      <div class="wc narrow reveal d2" data-cat="mobile">
+        <div class="wc-img">🗺️</div>
+        <div class="wc-body">
+          <div class="wc-cat">Mobile · Logistics</div>
+          <div class="wc-name">Fleet Tracking Mobile App</div>
+          <p class="wc-desc">Aplikasi tracking armada real-time dengan GPS integration, notifikasi geofencing, dan laporan perjalanan.</p>
+          <div class="wc-tags"><span class="wctag">React Native</span><span class="wctag">Maps</span><span class="wctag">Laravel</span></div>
+        </div>
+      </div>
+      <div class="wc wide reveal d3" data-cat="web">
+        <div class="wc-img">📊</div>
+        <div class="wc-body">
+          <div class="wc-cat">Web App · Dashboard</div>
+          <div class="wc-name">Enterprise Analytics Dashboard</div>
+          <p class="wc-desc">Dashboard analytics real-time untuk monitoring KPI bisnis, dengan visualisasi data interaktif, laporan PDF otomatis, dan role-based access control.</p>
+          <div class="wc-tags"><span class="wctag">NextJS</span><span class="wctag">TypeScript</span><span class="wctag">Chart.js</span><span class="wctag">MySQL</span></div>
+        </div>
+      </div>
+      <div class="wc reveal d1" data-cat="devops">
+        <div class="wc-img">⚙️</div>
+        <div class="wc-body">
+          <div class="wc-cat">DevOps · Infrastructure</div>
+          <div class="wc-name">Zero-Downtime Deployment Pipeline</div>
+          <p class="wc-desc">Setup CI/CD pipeline lengkap dengan automated testing, staging environment, dan blue-green deployment untuk sistem ISP.</p>
+          <div class="wc-tags"><span class="wctag">GitHub Actions</span><span class="wctag">Docker</span><span class="wctag">Nginx</span></div>
+        </div>
+      </div>
+      <div class="wc reveal d2" data-cat="web">
+        <div class="wc-img">🏥</div>
+        <div class="wc-body">
+          <div class="wc-cat">Web App · Healthcare</div>
+          <div class="wc-name">Clinic Management System</div>
+          <p class="wc-desc">Sistem manajemen klinik dengan rekam medis digital, penjadwalan dokter, dan integrasi sistem antrian pasien.</p>
+          <div class="wc-tags"><span class="wctag">Laravel</span><span class="wctag">Vue.js</span><span class="wctag">MySQL</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="work-cta-wrap reveal d3">
+      <a href="#contact" class="btn bp">Diskusikan Project Anda <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ PLATFORM / HOW IT WORKS ════════ -->
+<section id="platform">
+  <div class="container">
+    <div class="plat-top reveal">
+      <div class="chip"><i></i>Platform</div>
+      <h2 class="h2">How I <em>Work</em></h2>
+      <p class="sub" style="margin-inline:auto;color:rgba(255,255,255,.65)">Proses yang terstruktur dari brief hingga delivery — transparan di setiap langkahnya.</p>
+    </div>
+    <div class="plat-steps">
+      <div class="plat-step reveal d1">
+        <div class="plat-n">01</div>
+        <div class="plat-ico">💬</div>
+        <div class="plat-title">Discovery Call</div>
+        <div class="plat-desc">Diskusi kebutuhan, tujuan bisnis, timeline, dan budget. Gratis, tanpa komitmen. Biasanya 30–60 menit.</div>
+      </div>
+      <div class="plat-step reveal d2">
+        <div class="plat-n">02</div>
+        <div class="plat-ico">📐</div>
+        <div class="plat-title">Proposal &amp; Blueprint</div>
+        <div class="plat-desc">Saya kirimkan proposal teknis lengkap — tech stack, architecture, timeline, dan estimasi biaya yang transparan.</div>
+      </div>
+      <div class="plat-step reveal d3">
+        <div class="plat-n">03</div>
+        <div class="plat-ico">⚡</div>
+        <div class="plat-title">Development Sprint</div>
+        <div class="plat-desc">Development dengan update progress reguler. Anda selalu tahu status project tanpa harus tanya-tanya.</div>
+      </div>
+      <div class="plat-step reveal d4">
+        <div class="plat-n">04</div>
+        <div class="plat-ico">🔍</div>
+        <div class="plat-title">Review &amp; Testing</div>
+        <div class="plat-desc">Demo ke Anda, revisi berdasarkan feedback, QA testing menyeluruh sebelum masuk production.</div>
+      </div>
+      <div class="plat-step reveal d5">
+        <div class="plat-n">05</div>
+        <div class="plat-ico">🚀</div>
+        <div class="plat-title">Launch &amp; Deploy</div>
+        <div class="plat-desc">Deployment ke server production dengan zero downtime. Setup monitoring dan backup otomatis.</div>
+      </div>
+      <div class="plat-step reveal d6">
+        <div class="plat-n">06</div>
+        <div class="plat-ico">🛡️</div>
+        <div class="plat-title">Support &amp; Maintain</div>
+        <div class="plat-desc">Garansi bug fixing 30 hari. Tersedia paket maintenance bulanan untuk ketenangan pikiran jangka panjang.</div>
+      </div>
+      <div class="plat-step reveal d1">
+        <div class="plat-n">07</div>
+        <div class="plat-ico">📊</div>
+        <div class="plat-title">Analytics &amp; Growth</div>
+        <div class="plat-desc">Setup analytics, performance monitoring, dan rekomendasi optimasi untuk memastikan sistem terus berkembang.</div>
+      </div>
+      <div class="plat-step reveal d2">
+        <div class="plat-n">08</div>
+        <div class="plat-ico">🔄</div>
+        <div class="plat-title">Iteration</div>
+        <div class="plat-desc">Bisnis terus berkembang, sistem pun harus ikut. Siap untuk iterasi fitur berikutnya bersama Anda.</div>
+      </div>
+    </div>
+    <div class="plat-cta reveal">
+      <p>Siap mulai? Diskusi project Anda gratis, tanpa commitment.</p>
+      <a href="#contact" class="btn bw">Book Free Discovery Call <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ PRICING ════════ -->
+<section id="pricing">
+  <div class="container">
+    <div class="ctr reveal">
+      <div class="chip"><i></i>Pricing</div>
+      <h2 class="h2">Transparent <em>Pricing</em></h2>
+      <p class="sub">Harga kompetitif berdasarkan riset pasar developer Indonesia 2025. No hidden fees, no contracts.</p>
+    </div>
+    <div class="ptoggle">
+      <span>Per Project</span>
+      <div class="toggle-wrap" id="ptoggle" role="switch" aria-checked="false" tabindex="0" aria-label="Toggle pricing period"></div>
+      <span>Retainer / Bulan <span class="save-badge">Save 20%</span></span>
+    </div>
+    <div class="price-grid">
+
+      <!-- STARTER -->
+      <div class="pc reveal d1">
+        <div class="pc-icon">🚀</div>
+        <div class="pc-name">Starter</div>
+        <div class="pc-price">
+          <span class="pc-amt" data-project="2.5jt" data-retainer="1.8jt">Rp 2,5jt</span>
+          <span class="pc-per" id="pp1">/ project</span>
+        </div>
+        <p class="pc-desc">Cocok untuk landing page, company profile, atau aplikasi mobile sederhana.</p>
+        <div class="pc-features">
+          <div class="pf">Landing Page / Company Profile</div>
+          <div class="pf">Responsive &amp; Mobile-first</div>
+          <div class="pf">Up to 5 halaman</div>
+          <div class="pf">Contact form + basic SEO</div>
+          <div class="pf">Deploy ke hosting/VPS</div>
+          <div class="pf">Revisi 2x</div>
+          <div class="pf">Garansi bug 14 hari</div>
+        </div>
+        <a href="#contact" class="pc-cta">Mulai Project</a>
+      </div>
+
+      <!-- PROFESSIONAL -->
+      <div class="pc popular reveal d2">
+        <div class="pop-badge">⭐ Popular</div>
+        <div class="pc-icon">⚡</div>
+        <div class="pc-name">Professional</div>
+        <div class="pc-price">
+          <span class="pc-amt" data-project="7.5jt" data-retainer="5.5jt">Rp 7,5jt</span>
+          <span class="pc-per" id="pp2">/ project</span>
+        </div>
+        <p class="pc-desc">Untuk web application, mobile app, atau sistem dengan fitur kompleks dan backend terintegrasi.</p>
+        <div class="pc-features">
+          <div class="pf">Web App atau Mobile App (React Native)</div>
+          <div class="pf">Backend Laravel / Node.js + Database</div>
+          <div class="pf">REST API terintegrasi</div>
+          <div class="pf">Auth system (login, register, roles)</div>
+          <div class="pf">Admin dashboard</div>
+          <div class="pf">Payment gateway integration</div>
+          <div class="pf">Deploy + CI/CD setup</div>
+          <div class="pf">Revisi 4x + Garansi bug 30 hari</div>
+        </div>
+        <a href="#contact" class="pc-cta">Mulai Project</a>
+      </div>
+
+      <!-- ENTERPRISE -->
+      <div class="pc reveal d3">
+        <div class="pc-icon">🏢</div>
+        <div class="pc-name">Enterprise</div>
+        <div class="pc-price">
+          <span class="pc-amt" data-project="Custom" data-retainer="Custom">Custom</span>
+          <span class="pc-per" id="pp3">/ project</span>
+        </div>
+        <p class="pc-desc">Platform skala besar, sistem microservice, atau kebutuhan khusus yang memerlukan arsitektur enterprise.</p>
+        <div class="pc-features">
+          <div class="pf">Semua fitur Professional</div>
+          <div class="pf">Microservice architecture</div>
+          <div class="pf">Web + Mobile dari satu codebase</div>
+          <div class="pf">DevOps setup lengkap</div>
+          <div class="pf">System architecture consulting</div>
+          <div class="pf">Team onboarding &amp; dokumentasi</div>
+          <div class="pf">SLA &amp; dedicated support</div>
+          <div class="pf">Revisi unlimited + 3 bulan maintenance</div>
+        </div>
+        <a href="#contact" class="pc-cta">Diskusi Sekarang</a>
+      </div>
+
+    </div>
+    <p class="price-note reveal">Butuh sesuatu di antara paket? <span>Hubungi saya</span> — semua proyek bisa dikustomisasi. Konsultasi awal selalu gratis.</p>
+  </div>
+</section>
+
+<!-- ════════ ABOUT ════════ -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="reveal-left">
+        <div class="about-card">
+          <div class="av-big">ARD</div>
+          <div class="av-name">Abdul Rizky Darmawan</div>
+          <div class="av-role">Fullstack &amp; Mobile Developer · DevOps</div>
+          <div class="av-pills">
+            <span class="apill">📍 Lumajang, Jawa Timur</span>
+            <span class="apill">🎓 S1 Sistem Informasi</span>
+            <span class="apill">💼 5+ Years</span>
+            <span class="apill">🏆 LSP Certified</span>
+            <span class="apill">🎯 Web + Mobile</span>
+          </div>
+        </div>
+      </div>
+      <div class="reveal-right">
+        <div class="chip"><i></i>About Me</div>
+        <h2 class="h2">One Developer,<br/><em>Full Solution</em></h2>
+        <p class="sub">Saya tidak hanya membuat website atau aplikasi mobile secara terpisah — saya membangun ekosistem digital yang terhubung: backend yang kuat, frontend yang responsif, mobile app yang seamless, dan infrastruktur yang handal.</p>
+        <div class="about-facts">
+          <div class="af"><div class="af-ico">📧</div><div><div class="af-v">rizkydharma111@gmail.com</div><div class="af-m">Email</div></div></div>
+          <div class="af"><div class="af-ico">📱</div><div><div class="af-v">089-563-0112344</div><div class="af-m">WhatsApp / Phone</div></div></div>
+          <div class="af"><div class="af-ico">🔗</div><div><div class="af-v">linkedin.com/in/abdulrizky</div><div class="af-m">LinkedIn</div></div></div>
+          <div class="af"><div class="af-ico">🎓</div><div><div class="af-v">S1 Sistem Informasi — Universitas Terbuka (2023–2026)</div><div class="af-m">Pendidikan</div></div></div>
+          <div class="af"><div class="af-ico">🏆</div><div><div class="af-v">Lulus Uji Kompetensi LSP · Olimpiade TI 2019</div><div class="af-m">Pencapaian</div></div></div>
+        </div>
+        <div style="margin-top:28px;display:flex;gap:14px;flex-wrap:wrap">
+          <a href="#contact" class="btn bp">Hire Me <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          <a href="#work" class="btn bo">See Portfolio</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ EXPERIENCE ════════ -->
+<section id="experience">
+  <div class="container">
+    <div class="chip reveal"><i></i>Work History</div>
+    <h2 class="h2 reveal d1">Professional <em>Experience</em></h2>
+    <div class="exp-wrap" style="margin-top:52px">
+      <div class="exp-side reveal-left">
+        <p class="exp-side-title">5+ Tahun Berkarya</p>
+        <p class="exp-side-sub">Dari Junior Developer hingga Lead Programmer &amp; DevOps Engineer di tiga perusahaan. Setiap peran mempertemukan saya dengan tantangan teknis yang membentuk perspektif engineering saya hari ini.</p>
+        <div class="exp-total">
+          <div class="exp-n" data-count="5">0</div>
+          <div class="exp-l">Years Professional Experience</div>
+        </div>
+      </div>
+      <div class="tl reveal-right">
+        <div class="tl-i tl-cur">
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <div class="tl-top"><div class="tl-co">PT Urban Teknologi Nusantara</div><div class="tl-bge">● Current</div></div>
+            <div class="tl-type">Internet Service Provider</div>
+            <div class="tl-period">📅 Januari 2025 — Sekarang</div>
+            <div class="tl-role">Lead Website Programmer &amp; DevOps Engineer</div>
+            <p class="tl-desc">Memimpin pengembangan platform web dan infrastruktur DevOps untuk layanan ISP. Bertanggung jawab atas arsitektur sistem, CI/CD pipeline, server management, dan memastikan uptime production yang optimal.</p>
+          </div>
+        </div>
+        <div class="tl-i">
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <div class="tl-top"><div class="tl-co">Kreaction Indonesia</div><div class="tl-bge">Konsultan IT</div></div>
+            <div class="tl-type">IT Consultant Agency</div>
+            <div class="tl-period">📅 Mei 2022 — April 2024</div>
+            <div class="tl-role">Lead Website Programmer</div>
+            <p class="tl-desc">Memimpin tim developer sebagai Lead Programmer. Merancang arsitektur solusi, mengelola sprint development, code review, dan memastikan delivery berkualitas tinggi untuk berbagai klien konsultansi IT.</p>
+          </div>
+        </div>
+        <div class="tl-i">
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <div class="tl-top"><div class="tl-co">PT Mascitra Teknologi Informasi</div><div class="tl-bge">Konsultan IT</div></div>
+            <div class="tl-type">IT Consultant</div>
+            <div class="tl-period">📅 April 2021 — Januari 2025</div>
+            <div class="tl-role">Junior → Senior Website Programmer</div>
+            <p class="tl-desc">Berkembang pesat dari Junior hingga Senior Programmer. Menangani proyek web development end-to-end, membangun REST API, sistem auth &amp; security, dan mentoring junior developer.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ TESTIMONIALS ════════ -->
+<section id="testi">
+  <div class="container">
+    <div class="ctr reveal">
+      <div class="chip"><i></i>Testimonials</div>
+      <h2 class="h2">What Clients <em>Say</em></h2>
+      <p class="sub">Feedback dari rekan dan klien yang pernah berkolaborasi.</p>
+    </div>
+    <div class="testi-grid">
+      <div class="tc reveal d1">
+        <div class="tc-stars">★★★★★</div>
+        <p class="tc-text">Abdul memiliki kemampuan teknis yang luar biasa. Setiap kali ada masalah kompleks, dia selalu menemukan solusi yang elegan. Tim sangat beruntung memilikinya sebagai Lead Developer.</p>
+        <div class="tc-author"><div class="tc-av">MR</div><div><div class="tc-name">Senior Manager, PT Mascitra TI</div><div class="tc-pos">IT Consultant · 2023</div></div></div>
+      </div>
+      <div class="tc reveal d2">
+        <div class="tc-stars">★★★★★</div>
+        <p class="tc-text">Rizky sangat profesional. Delivery tepat waktu, komunikasi aktif, dan hasil kerjanya clean serta mudah di-maintain. Sistem yang dia bangun masih berjalan mulus sampai sekarang.</p>
+        <div class="tc-author"><div class="tc-av">KD</div><div><div class="tc-name">CTO, Kreaction Indonesia</div><div class="tc-pos">Lead Project · 2023</div></div></div>
+      </div>
+      <div class="tc reveal d3">
+        <div class="tc-stars">★★★★★</div>
+        <p class="tc-text">Sebagai DevOps engineer, Abdul berhasil meminimalisir downtime signifikan dan membangun pipeline CI/CD yang solid. Infrastruktur kami jauh lebih stabil dan team lebih produktif.</p>
+        <div class="tc-author"><div class="tc-av">UT</div><div><div class="tc-name">Tech Lead, PT Urban TN</div><div class="tc-pos">DevOps Project · 2025</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ FAQ ════════ -->
+<section id="faq">
+  <div class="container">
+    <div class="ctr reveal">
+      <div class="chip"><i></i>FAQ</div>
+      <h2 class="h2">Pertanyaan yang <em>Sering Ditanya</em></h2>
+      <p class="sub">Jawaban jujur atas pertanyaan umum seputar layanan dan cara kerja saya.</p>
+    </div>
+    <div class="faq-wrap">
+      <div class="fq reveal d1">
+        <div class="fq-q">Apakah Anda bisa mengerjakan web dan mobile sekaligus?<div class="fq-ico">+</div></div>
+        <div class="fq-a"><div class="fq-ai">Ya, justru itulah keunggulan saya. Sebagai fullstack developer, saya membangun web dan mobile yang berbagi backend yang sama. Tidak perlu hire dua developer berbeda — satu codebase backend, web app di ReactJS/NextJS, dan mobile app di React Native. Lebih efisien dan lebih konsisten.</div></div>
+      </div>
+      <div class="fq reveal d2">
+        <div class="fq-q">Berapa lama estimasi pengerjaan proyek?<div class="fq-ico">+</div></div>
+        <div class="fq-a"><div class="fq-ai">Landing page sederhana: 3–7 hari. Web application dengan backend: 2–6 minggu. Mobile app cross-platform: 3–8 minggu. Sistem enterprise kompleks: 2–4 bulan. Saya selalu berikan estimasi detail setelah memahami scope project Anda.</div></div>
+      </div>
+      <div class="fq reveal d3">
+        <div class="fq-q">Bagaimana sistem pembayaran dan milestone?<div class="fq-ico">+</div></div>
+        <div class="fq-a"><div class="fq-ai">Biasanya dibagi 3 tahap: 40% down payment di awal, 40% saat midpoint (setelah demo fitur utama), dan 20% saat project selesai dan diserahterimakan. Untuk proyek kecil, bisa 50/50. Fleksibel sesuai kesepakatan.</div></div>
+      </div>
+      <div class="fq reveal d1">
+        <div class="fq-q">Apakah ada garansi setelah project selesai?<div class="fq-ico">+</div></div>
+        <div class="fq-a"><div class="fq-ai">Ya. Paket Starter mendapat garansi bug 14 hari, Professional 30 hari, dan Enterprise 3 bulan. Selama periode garansi, saya akan fix bug yang muncul tanpa biaya tambahan. Untuk maintenance jangka panjang, tersedia paket retainer bulanan.</div></div>
+      </div>
+      <div class="fq reveal d2">
+        <div class="fq-q">Harga di halaman ini sudah final?<div class="fq-ico">+</div></div>
+        <div class="fq-a"><div class="fq-ai">Harga di atas adalah estimasi berdasarkan scope standar. Harga final ditentukan setelah kita diskusi detail scope, fitur, dan kompleksitas teknis. Saya transparan soal pricing — tidak ada biaya tersembunyi. Konsultasi awal selalu gratis.</div></div>
+      </div>
+      <div class="fq reveal d3">
+        <div class="fq-q">Apakah Anda tersedia untuk proyek freelance di luar pekerjaan utama?<div class="fq-ico">+</div></div>
+        <div class="fq-a"><div class="fq-ai">Ya, saya menerima proyek freelance dengan kapasitas terbatas untuk menjaga kualitas. Biasanya saya bisa mengerjakan 1–2 proyek paralel. Hubungi saya terlebih dahulu untuk mendiskusikan ketersediaan dan timeline yang sesuai.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ CONTACT ════════ -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-in">
+      <div class="cl reveal-left">
+        <div class="chip"><i></i>Get In Touch</div>
+        <h2 class="h2">Stop Talking.<br/><em>Start Building.</em></h2>
+        <p class="sub">Punya project? Mau diskusi teknis? Atau sekadar ingin say hi? Saya siap — respons dalam 24 jam.</p>
+        <div class="clinks">
+          <a href="mailto:rizkydharma111@gmail.com" class="clink"><div class="clink-ico">✉</div><div><div class="clink-lbl">Email</div><div class="clink-v">rizkydharma111@gmail.com</div></div></a>
+          <a href="https://wa.me/6289563011234" target="_blank" rel="noopener noreferrer" class="clink"><div class="clink-ico">📱</div><div><div class="clink-lbl">WhatsApp</div><div class="clink-v">089-563-0112344</div></div></a>
+          <a href="https://linkedin.com/in/abdulrizky" target="_blank" rel="noopener noreferrer" class="clink"><div class="clink-ico">🔗</div><div><div class="clink-lbl">LinkedIn</div><div class="clink-v">linkedin.com/in/abdulrizky</div></div></a>
+          <a href="https://github.com/abdulrizky" target="_blank" rel="noopener noreferrer" class="clink"><div class="clink-ico">🐱</div><div><div class="clink-lbl">GitHub</div><div class="clink-v">github.com/abdulrizky</div></div></a>
+        </div>
+      </div>
+      <div class="reveal-right">
+        <div class="cf-card">
+          <div class="cf-title">Kirim Pesan 👋</div>
+          <div class="cf-sub">Ceritakan project Anda — saya akan respons dalam 24 jam.</div>
+          <div id="fsuccess" class="fsuccess">✅ Pesan terkirim! Akan saya balas segera.</div>
+          <div id="cform">
+            <div class="frow">
+              <div class="fgrp"><label for="fn">Nama *</label><input type="text" id="fn" placeholder="Nama lengkap Anda" required/></div>
+              <div class="fgrp"><label for="fe">Email *</label><input type="email" id="fe" placeholder="email@anda.com" required/></div>
+            </div>
+            <div class="fgrp"><label for="fserv">Layanan yang Dibutuhkan</label>
+              <input type="text" id="fserv" placeholder="Web App / Mobile App / DevOps / Konsultasi"/>
+            </div>
+            <div class="fgrp"><label for="fb">Budget Estimasi</label>
+              <input type="text" id="fb" placeholder="cth: 5–10 juta / negotiate"/>
+            </div>
+            <div class="fgrp"><label for="fm">Detail Project *</label><textarea id="fm" rows="4" placeholder="Ceritakan kebutuhan dan tujuan project Anda..." required></textarea></div>
+            <button class="fsub" id="fsend">
+              Kirim Pesan
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7z"/></svg>
+            </button>
+            <p class="fnote">Konsultasi awal selalu gratis. Tidak ada obligation.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ FOOTER ════════ -->
+<footer>
+  <div class="container">
+    <div class="ft-grid">
+      <div class="ft-brand">
+        <div class="logo">Abdul<span style="color:var(--b400)">.</span>dev</div>
+        <p>Fullstack Website &amp; Mobile Developer berbasis di Lumajang, Jawa Timur. Membangun solusi digital yang scalable dan berperforma tinggi.</p>
+        <div class="ft-socials">
+          <a href="https://linkedin.com/in/abdulrizky" target="_blank" rel="noopener noreferrer" class="fsoc" aria-label="LinkedIn">in</a>
+          <a href="https://github.com/abdulrizky" target="_blank" rel="noopener noreferrer" class="fsoc" aria-label="GitHub">gh</a>
+          <a href="mailto:rizkydharma111@gmail.com" class="fsoc" aria-label="Email">✉</a>
+          <a href="https://wa.me/6289563011234" target="_blank" rel="noopener noreferrer" class="fsoc" aria-label="WhatsApp">wa</a>
+        </div>
+      </div>
+      <div class="fc">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#work">Portfolio</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#experience">Experience</a></li>
         </ul>
+      </div>
+      <div class="fc">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Web Development</a></li>
+          <li><a href="#services">Mobile App</a></li>
+          <li><a href="#services">Backend &amp; API</a></li>
+          <li><a href="#services">DevOps</a></li>
+          <li><a href="#services">Architecture</a></li>
+          <li><a href="#platform">How It Works</a></li>
+        </ul>
+      </div>
+      <div class="fc">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:rizkydharma111@gmail.com">rizkydharma111@gmail.com</a></li>
+          <li><a href="tel:0895630112344">089-563-0112344</a></li>
+          <li><a href="https://linkedin.com/in/abdulrizky" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+        </ul>
+      </div>
     </div>
+    <div class="ft-bot">
+      <p>© 2025 <span>Abdul Rizky Darmawan</span>. All rights reserved.</p>
+      <p>Deployed on <span>GitHub Pages</span> — Lumajang, East Java 🇮🇩</p>
+    </div>
+  </div>
+</footer>
 
-    <div class="parallax-content baner-content" id="home">
-        <div class="container">
-            <div class="first-content">
-                <h1>Halo</h1>
-                <span class="mb-2">Saya <em>Abdul Rizky Darmawan</em>.</span>
-                <span>Saya Seorang FullStack Website Developer.</span>
-                <div class="primary-button">
-                    <a href="#data">Lebih Banyak</a>
-                </div>
-            </div>
-        </div>
-    </div>
+<button id="st" aria-label="Scroll to top">↑</button>
 
+<script>
+/* ── NAV ───────────────────────────────── */
+const nav=document.getElementById('nav'),st=document.getElementById('st');
+window.addEventListener('scroll',()=>{
+  const y=window.scrollY;
+  nav.classList.toggle('scrolled',y>50);
+  st.classList.toggle('show',y>500);
+  updateSrvNav();
+  highlightNav();
+});
 
-    <div class="service-content" id="data">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 cv">
-                    <h1 class="text-center font-weight-bold text-white pb-5 mb-4" style="font-size: 40px;">CV</h1>
-                </div>
-                <div class="col-md-4 data-personal">
-                    <div class="text-center">
-                        <img src="img/favicon/abdulrizky.png" alt="" class="rounded-circle mb-5 w-50">
-                    </div>
-                    <div class="left-text">
-                        <h4>Data Pribadi</h4>
-                        <div class="line-dec"></div>
-                        <table class="text-light">
-                            <tr>
-                                <td align="left">Nama &nbsp; &nbsp; &nbsp;</td>
-                                <td> : </td>
-                                <td align="left"> &nbsp; &nbsp; &nbsp;Abdul Rizky Darmawan</td>
-                            </tr>
-                            <tr>
-                                <td align="left">Jenis Kelamin &nbsp; &nbsp; &nbsp;</td>
-                                <td> : </td>
-                                <td align="left"> &nbsp; &nbsp; &nbsp;Laki-laki</td>
-                            </tr>
-                            <tr>
-                                <td align="left">Agama &nbsp; &nbsp; &nbsp;</td>
-                                <td> : </td>
-                                <td align="left"> &nbsp; &nbsp; &nbsp;Islam</td>
-                            </tr>
-                            <tr>
-                                <td align="left">Umur &nbsp; &nbsp; &nbsp;</td>
-                                <td> : </td>
-                                <td align="left"> &nbsp; &nbsp; &nbsp;19 Tahun</td>
-                            </tr>
-                            <tr>
-                                <td align="left">Domisili &nbsp; &nbsp; &nbsp;</td>
-                                <td> : </td>
-                                <td align="left"> &nbsp; &nbsp; &nbsp;Kab. Lumajang, Jawa Timur</td>
-                            </tr>
-                            <tr>
-                                <td align="left">Pendidikan &nbsp; &nbsp; &nbsp;</td>
-                                <td> : </td>
-                                <td align="left"> &nbsp; &nbsp; &nbsp;Fresh Graduate SMK <br> &nbsp; &nbsp; &nbsp;Lulus Tahun 2021</td>
-                            </tr>
-                        </table>
-                        <br>
-                        <div class="primary-button ">
-                            <!-- <a href="#portfolio">Learn More About Us</a> -->
-                            <h4>Pengalaman Kerja</h4>
-                            <div class="line-dec"></div>
-                            <style>
-                                table{
-                                    text-align:center ;
-                                }
-                                table th{
-                                    padding: 5px;
-                                }
-                                table td{
-                                    padding: 5px;
-                                }
-                            </style>
-                            <table class="text-white" border="1">
-                                <tr>
-                                    <th>No</th>
-                                    <th>Nama Perusahaan</th>
-                                    <th>Masa Kerja</th>
-                                    <th>Status</th>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>KONSULTAN IT - MASCITRA.COM</td>
-                                    <td>6 Bulan</td>
-                                    <td>Freelance Remote</td>
-                                </tr>
-                            </table>
-                        </div>
-                        <br>
-                        <div class="primary-button text-white">
-                            <!-- <a href="#portfolio">Learn More About Us</a> -->
-                            <h4>Kepribadian</h4>
-                            <div class="line-dec"></div>
-                            Komunikatif</br>
-                            Ketepatan Waktu</br>
-                            Terorganisir</br>
-                            Menyukai Hal Baru</br>
-                            Profesional Berbahasa</br>
-                            Menyukai Problem Solving</br>
-                        </div>
-                        <br>
-                        <div class="primary-button text-white">
-                            <!-- <a href="#portfolio">Learn More About Us</a> -->
-                            <h4>Hobi</h4>
-                            <div class="line-dec"></div>
-                            Teknologi dan Membaca
-                        </div>
-                        <br>
-                        <div class="primary-button ">
-                            <!-- <a href="#portfolio">Learn More About Us</a> -->
-                            <h4>Kontak</h4>
-                            <div class="line-dec"></div>
-                            <p class="font-weight-bold">Telepon / WA : 08978882134</p>
-                            <p class="font-weight-bold">Email : rizkydharma111@gmail.com</p>
-                        </div>
-                        <br>
-                        <div class="primary-button text-white">
-                            <!-- <a href="#portfolio">Learn More About Us</a> -->
-                            <h4>Media Sosial</h4>
-                            <div class="line-dec"></div>
-                            <ul style="list-style: none;">
-                            <a target="_blank" href="https://web.facebook.com/people/Abdul-Rizky/100012974108550/"><i class="fa fa-2x fa-facebook text-primary"></i></a>
-                            <a target="_blank" href="https://www.linkedin.com/in/abdul-rizky-darmawan-37b193222/"><i class="fa fa-2x fa-linkedin text-danger"></i></a>
-                            <a target="_blank" href="https://www.instagram.com/rizkydharma/"><i class="fa fa-2x fa-instagram text-dark"></i></a>
-                            <a target="_blank" href="mailto: rizkydharma111@gmail.com"><i class="fa fa-2x fa-google text-dark"></i></a>
-                    </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-8">
-                    <div class="row personal">
-                        <div class="col-md-12 text-center h1 mb-5 pb-4 text-white" style="border-bottom:1px solid #fff">
-                            Pendidikan
-                        </div>
-                        <div class="col-md-6">
-                            <div class="service-item">
-                                <h4>Pendidikan Formal</h4>
-                                <div class="line-dec"></div>
-                                <p class="text-left">SMKN 1 Lumajang - ( Jurusan RPL )</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="service-item">
-                                <h4>Bahasa</h4>
-                                <div class="line-dec"></div>
-                                <p class="text-left" class="font-weight-bold">
-                                    Indonesia, Inggris, dan Jawa
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="service-item">
-                                <h4>Pendidikan Informal</h4>
-                                <div class="line-dec"></div>
-                                <p class="text-left">- Web Programming Codeigniter</p>
-                                <p class="text-left">- Web Programming Laravel</p>
-                                <p class="text-left">- Web Programming MERN Fullstack <br> (MongoDB, ExpressJS, ReactJS, and NodeJS)</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="service-item">
-                                <h4>Sertifikat</h4>
-                                <div class="line-dec"></div>
-                                <p class="text-left" class="font-weight-bold">
-                                    - Juara 3 di LKS (Lomba Kompetensi Siswa) bidang Web Technologies tingkat WILKER 2 <br>
-                                    - Sertifikat LSP (Lembaga Sertifikasi Profesi) SMKN 1 Lumajang <br>
-                                    - Sertifikat Magang dari PT. MASCITRA.COM <br>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-md-12 text-center pb-4 h1 my-5 text-white" style="border-bottom:1px solid #fff">
-                            Skill
-                        </div>
-                        <div class="col-md-6">
-                            <div class="service-item">
-                                <h4>Database</h4>
-                                <div class="line-dec"></div>
-                                <p class="text-left" class="font-weight-bold">
-                                    - MONGODB <br>
-                                    - MYSQL
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="service-item">
-                                <h4>Backend Dev</h4>
-                                <div class="line-dec"></div>
-                                <p class="text-left" class="font-weight-bold">
-                                    - PHP <br>
-                                    - CODEIGNITER <br>
-                                    - LARAVEL <br>
-                                    - NodeJS <br>
-                                    - ExpressJS <br>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="service-item">
-                                <h4>Frontend Dev</h4>
-                                <div class="line-dec"></div>
-                                <p class="text-left" class="font-weight-bold">
-                                    - HTML <br>
-                                    - CSS <br>
-                                    - JAVASCRIPT <br>
-                                    - JQUERY <br>
-                                    - AJAX <br>
-                                    - ReactJS <br>
-                                    - Game Dev Javascript <br>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="service-item">
-                                <h4>UI/UX Design</h4>
-                                <div class="line-dec"></div>
-                                <p class="text-left" class="font-weight-bold">
-                                    - FIGMA <br>
-                                    - PHOTOSHOP <br>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="parallax-content projects-content" id="portfolio">
-        <div class="container">
-            <h1 class="text-center font-weight-bold text-white pb-5" style="font-size: 40px;">Portfolio</h1>
-            <small class="w-100 text-white">(Klik gambar untuk detail Project)</small>
-            <div class="row pb-5 mt-4">
-                <div class="col-sm-4 item rounded mb-5 m-0">
-                    <div class="testimonials-item" data-toggle="modal" data-target="#simpeg-perpenas-modal">
-                        <img src="img/project/simpeg-perpenas.png" alt="" class="rounded pointer img-thumbnail">
-                        <div class="text-content">
-                            <h4>SIMPEG PERPENAS</h4>
-                            <span>MASCITRA.COM</span>
-                            <span>(Selesai)</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4 item rounded mb-5 m-0">
-                    <div class="testimonials-item" data-toggle="modal" data-target="#simpeg-mascitra-modal">
-                        <img src="img/project/simpeg-mascitra.png" alt="" class="rounded pointer img-thumbnail">
-                        <div class="text-content">
-                            <h4>SIMPEG MASCITRA.COM</h4>
-                            <span>MASCITRA.COM</span>
-                            <span>(Selesai)</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4 item rounded mb-5 m-0">
-                    <div class="testimonials-item" data-toggle="modal" data-target="#e-puskesmas-modal">
-                        <img src="img/project/e-puskesmas.png" alt="" class="rounded pointer img-thumbnail">
-                        <div class="text-content">
-                            <h4>E-Puskesmas Dinas Kesehatan Lumajang</h4>
-                            <span>MASCITRA.COM</span>
-                            <span>(Selesai)</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4 item rounded mb-5 m-0">
-                    <div class="testimonials-item" data-toggle="modal" data-target="#desamaju-modal">
-                        <img src="img/project/desamaju.png" alt="" class="rounded pointer img-thumbnail">
-                        <div class="text-content">
-                            <h4>DESAMAJU</h4>
-                            <span>MASCITRA.COM</span>
-                            <span>(Selesai)</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4 item rounded mb-5 m-0">
-                    <div class="testimonials-item" data-toggle="modal" data-target="#datascrip-modal">
-                        <img src="img/project/datascrip.png" alt="" class="rounded pointer img-thumbnail">
-                        <div class="text-content">
-                            <h4>SIPLah DATASCRIP MALL</h4>
-                            <span>MASCITRA.COM</span>
-                            <span>(Selesai)</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4 item rounded mb-5 m-0">
-                    <div class="testimonials-item" data-toggle="modal" data-target="#bincigar-modal">
-                        <img src="img/project/bincigar.png" alt="" class="rounded pointer img-thumbnail">
-                        <div class="text-content">
-                            <h4>BINCIGAR</h4>
-                            <span>MASCITRA.COM</span>
-                            <span>(Selesai)</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4 item rounded mb-5 m-0">
-                    <div class="testimonials-item" data-toggle="modal" data-target="#dindag-modal">
-                        <img src="img/project/dindag.png" alt="" class="rounded pointer img-thumbnail">
-                        <div class="text-content">
-                            <h4>DINDAG <br> <small>( Dinas Perdagangan Kabupaten Lumajang )</small></h4>
-                            <span>MASCITRA.COM</span>
-                            <span>(SELESAI)</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4 item rounded mb-5 m-0">
-                    <div class="testimonials-item" data-toggle="modal" data-target="#kepeg-modal">
-                        <img src="img/project/kepeg.png" alt="" class="rounded pointer img-thumbnail">
-                        <div class="text-content">
-                            <h4>KEPEGAWAIAN <br> <small>( Kepegawaian Menteri Luar Negeri )</small></h4>
-                            <span>MASCITRA.COM</span>
-                            <span>(SELESAI)</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4 item rounded mb-5 m-0">
-                    <div class="testimonials-item" data-toggle="modal" data-target="#keu-modal">
-                        <img src="img/project/keu.png" alt="" class="rounded pointer img-thumbnail">
-                        <div class="text-content">
-                            <h4>KEUANGAN <br> <small>( Keuangan Menteri Luar Negeri )</small></h4>
-                            <span>MASCITRA.COM</span>
-                            <span>(SELESAI)</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4 item rounded mb-5 m-0">
-                    <div class="testimonials-item" data-toggle="modal" data-target="#monol-modal">
-                        <img src="img/project/monol.png" alt="" class="rounded pointer img-thumbnail">
-                        <div class="text-content">
-                            <h4>MONOL PJB Services <br> <small>( Monitoring Online Pengadaan Surabaya )</small></h4>
-                            <span>MASCITRA.COM</span>
-                            <span>(SELESAI)</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4 item rounded mb-5 m-0">
-                    <div class="testimonials-item" data-toggle="modal" data-target="#bela-modal">
-                        <img src="img/project/bela.png" alt="" class="rounded pointer img-thumbnail">
-                        <div class="text-content">
-                            <h4>BELAPENGADAAN DATASCRIP MALL</h4>
-                            <span>MASCITRA.COM</span>
-                            <span>(SELESAI)</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+/* hamburger */
+const ham=document.getElementById('ham'),mob=document.getElementById('mob');
+ham.addEventListener('click',()=>{
+  const o=ham.classList.toggle('open');
+  mob.classList.toggle('open',o);
+  ham.setAttribute('aria-expanded',o);
+  document.body.style.overflow=o?'hidden':'';
+});
+document.querySelectorAll('.ml').forEach(l=>l.addEventListener('click',()=>{
+  ham.classList.remove('open');mob.classList.remove('open');
+  ham.setAttribute('aria-expanded','false');document.body.style.overflow='';
+}));
 
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 footer">
-                    <div class="primary-button">
-                        <a href="#home">Kembali Ke atas</a>
-                    </div>
-                    <p>Copyright &copy; 2021 Abdul Rizky Darmawan
-                </div>
-            </div>
-        </div>
-    </footer>
+st.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
 
-    <!-- Modal -->
-    <div class="modal fade" id="simpeg-mascitra-modal" role="dialog" aria-labelledby="simpeg-mascitra-modal-label"
-        aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <img src="img/project/simpeg-mascitra.png" alt="" class="rounded pointer img-thumbnail">
-                    <table class="table table-hover table-responsive p-5">
-                        <tbody class="text-left">
-                            <tr>
-                                <th>Nama Website</th>
-                                <td>SIMPEG MASCITRA.COM</td>
-                            </tr>
-                            <tr>
-                                <th>Teknologi yang digunakan</th>
-                                <td>PHP (Codeignter 3), Javascript (Jquery) dan Database MYSQL</td>
-                            </tr>
-                            <tr>
-                                <th>Detail Project</th>
-                                <td>Pembuatan Website <b>BARU</b> untuk Sistem Kepegawaian MASCITRA.COM
-                            </tr>
-                            <tr>
-                                <th>Pekerjaan</th>
-                                <td>- Fullstack Website Development <br>- Bekerja Secara TIM</td>
-                            </tr>
-                            <tr>
-                                <th>Deskripsi Singkat Pekerjaan</th>
-                                <td>
-                                    - Membuat REST.API untuk website <br>
-                                    - Membuat tampilan website <br>
-                                    - Mengintegrasikan REST.API dengan tampilan website <br>
-                                    - Penyelesaian masalah pada website <br>
-                                    - Koordinasi dengan TIM <br>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="simpeg-perpenas-modal" role="dialog" aria-labelledby="simpeg-perpenas-modal-label"
-        aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <img src="img/project/simpeg-perpenas.png" alt="" class="rounded pointer img-thumbnail">
-                    <table class="table table-hover table-responsive p-5">
-                        <tbody class="text-left">
-                            <tr>
-                                <th>Nama Website</th>
-                                <td>SIMPEG PERPENAS</td>
-                            </tr>
-                            <tr>
-                                <th>Teknologi yang digunakan</th>
-                                <td>PHP (Codeignter 3), Javascript (Jquery) dan Database MYSQL</td>
-                            </tr>
-                            <tr>
-                                <th>Detail Project</th>
-                                <td>Pengembangan Website untuk Sistem Informasi Kepegawaian Untag Banyuwangi Integrasi seluruh SMK, SMP, TK.</td>
-                            </tr>
-                            <tr>
-                                <th>Pekerjaan</th>
-                                <td>- Fullstack Website Development <br>- Bekerja Secara TIM</td>
-                            </tr>
-                            <tr>
-                                <th>Deskripsi Singkat Pekerjaan</th>
-                                <td>
-                                    - Mengembangkan dan Memperbaiki REST.API yang belum sempurna <br>
-                                    - Mengembangkan dan Memperbaiki tampilan website belum sempurna <br>
-                                    - Memecahkan Masalah dari error/kesalahan website <br>
-                                    - Mengintegrasikan REST.API dengan tampilan website <br>
-                                    - Koordinasi dengan TIM <br>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="e-puskesmas-modal" role="dialog" aria-labelledby="e-puskesmas-modal-label"
-        aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <img src="img/project/e-puskesmas.png" alt="" class="rounded pointer img-thumbnail">
-                    <table class="table table-hover table-responsive p-5">
-                        <tbody class="text-left">
-                            <tr>
-                                <th>Nama Website</th>
-                                <td>E-Puskesmas Dinas Kesehatan Lumajang</td>
-                            </tr>
-                            <tr>
-                                <th>Teknologi yang digunakan</th>
-                                <td>PHP (Codeignter 3), Javascript (Jquery) dan Database MYSQL</td>
-                            </tr>
-                            <tr>
-                                <th>Detail Project</th>
-                                <td>Pengembangan untuk Website E Puskesmas Seluruh Kabupaten Lumajang.</td>
-                            </tr>
-                            <tr>
-                                <th>Pekerjaan</th>
-                                <td>- Fullstack Website Development <br>- Bekerja Secara TIM</td>
-                            </tr>
-                            <tr>
-                                <th>Deskripsi Singkat Pekerjaan</th>
-                                <td>
-                                    - Mengembangkan dan Memperbaiki REST.API yang belum sempurna <br>
-                                    - Mengembangkan dan Memperbaiki tampilan website belum sempurna <br>
-                                    - Memecahkan Masalah dari error/kesalahan website <br>
-                                    - Mengintegrasikan REST.API dengan tampilan website <br>
-                                    - Koordinasi dengan TIM <br>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="desamaju-modal" role="dialog" aria-labelledby="desamaju-modal-label"
-        aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <img src="img/project/desamaju.png" alt="" class="rounded pointer img-thumbnail">
-                    <table class="table table-hover table-responsive p-5">
-                        <tbody class="text-left">
-                            <tr>
-                                <th>Nama Website</th>
-                                <td>DESAMAJU.ID</td>
-                            </tr>
-                            <tr>
-                                <th>Teknologi yang digunakan</th>
-                                <td>PHP, Javascript (Jquery) dan Database MYSQL</td>
-                            </tr>
-                            <tr>
-                                <th>Detail Project</th>
-                                <td>Pembuatan Website <b>BARU</b> untuk DESAMAJU secara keseluruhan</td>
-                            </tr>
-                            <tr>
-                                <th>Pekerjaan</th>
-                                <td>- Fullstack Website Development <br>- Bekerja Secara MANDIRI</td>
-                            </tr>
-                            <tr>
-                                <th>Deskripsi Singkat Pekerjaan</th>
-                                <td>
-                                    - Membuat tampilan website semenarik mungkin <br>
-                                    - Mengintegrasikan Data di Database dengan tampilan website <br>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="datascrip-modal" role="dialog" aria-labelledby="datascrip-modal-label"
-        aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <img src="img/project/datascrip.png" alt="" class="rounded pointer img-thumbnail">
-                    <table class="table table-hover table-responsive p-5">
-                        <tbody class="text-left">
-                            <tr>
-                                <th>Nama Website</th>
-                                <td>SIPLah Datascrip Mall</td>
-                            </tr>
-                            <tr>
-                                <th>Teknologi yang digunakan</th>
-                                <td>PHP (Codeignter 3), Javascript (Jquery) dan Database MYSQL</td>
-                            </tr>
-                            <tr>
-                                <th>Detail Project</th>
-                                <td>Pembuatan Website <b>BARU</b> untuk perusahaan DATASCRIP secara keseluruhan</td>
-                            </tr>
-                            <tr>
-                                <th>Pekerjaan</th>
-                                <td>- Fullstack Website Development <br>- Bekerja Secara TIM</td>
-                            </tr>
-                            <tr>
-                                <th>Deskripsi Singkat Pekerjaan</th>
-                                <td>
-                                    - Membuat REST.API untuk website <br>
-                                    - Membuat tampilan website <br>
-                                    - Mengintegrasikan REST.API dengan tampilan website <br>
-                                    - Penyelesaian masalah pada website <br>
-                                    - Koordinasi dengan TIM <br>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="bincigar-modal" role="dialog" aria-labelledby="bincigar-modal-label" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <img src="img/project/bincigar.png" alt="" class="rounded pointer img-thumbnail">
-                    <table class="table table-hover table-responsive p-5">
-                        <tbody class="text-left">
-                            <tr>
-                                <th>Nama Website</th>
-                                <td>BINCIGAR</td>
-                            </tr>
-                            <tr>
-                                <th>Teknologi yang digunakan</th>
-                                <td>PHP (Codeignter 3), Blade Laravel, Javascript (Jquery) dan Database MYSQL</td>
-                            </tr>
-                            <tr>
-                                <th>Detail Project</th>
-                                <td>Pengembangan Website Bincigar untuk role Admin</td>
-                            </tr>
-                            <tr>
-                                <th>Pekerjaan</th>
-                                <td>- Fullstack Website Development <br>- Bekerja Secara TIM</td>
-                            </tr>
-                            <tr>
-                                <th>Deskripsi Singkat Pekerjaan</th>
-                                <td>
-                                    - Mengembangkan dan Memperbaiki REST.API yang belum sempurna <br>
-                                    - Mengembangkan dan Memperbaiki tampilan website belum sempurna <br>
-                                    - Memecahkan Masalah dari error/kesalahan website <br>
-                                    - Mengintegrasikan REST.API dengan tampilan website <br>
-                                    - Koordinasi dengan TIM <br>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="dindag-modal" role="dialog" aria-labelledby="dindag-modal-label" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <img src="img/project/dindag.png" alt="" class="rounded pointer img-thumbnail">
-                    <table class="table table-hover table-responsive p-5">
-                        <tbody class="text-left">
-                            <tr>
-                                <th>Nama Website</th>
-                                <td>DINDAG ( Dinas Perdagangan Kabupaten Lumajang )</td>
-                            </tr>
-                            <tr>
-                                <th>Teknologi yang digunakan</th>
-                                <td>PHP (Laravel 8) dan Javascript (Jquery)</td>
-                            </tr>
-                            <tr>
-                                <th>Detail Project</th>
-                                <td>Pembuatan Website <b>BARU</b> untuk Dinas Perdagangan Kabupaten Lumajang untuk role
-                                    Admin</td>
-                            </tr>
-                            <tr>
-                                <th>Pekerjaan</th>
-                                <td>- UI/UX Website <br> - Frontend Website Development <br>- Bekerja secara mandiri di bagian Fontend dan secara TIM dengan bagian backend
-                                </td>
-                            </tr>
-                            <tr>
-                                <th>Deskripsi Singkat Pekerjaan</th>
-                                <td>
-                                    - Membuat tampilan website <br>
-                                    - Mengintegrasikan REST.API dengan tampilan website <br>
-                                    - Penyelesaian masalah pada website <br>
-                                    - Koordinasi dengan TIM backend <br>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="kepeg-modal" role="dialog" aria-labelledby="kepeg-modal-label"
-        aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <img src="img/project/kepeg.png" alt="" class="rounded pointer img-thumbnail">
-                    <table class="table table-hover table-responsive p-5">
-                        <tbody class="text-left">
-                            <tr>
-                                <th>Nama Website</th>
-                                <td>Kepegawaian Menteri Luar Negeri</td>
-                            </tr>
-                            <tr>
-                                <th>Teknologi yang digunakan</th>
-                                <td>PHP (Codeignter), Javascript (Jquery) dan Database MYSQL</td>
-                            </tr>
-                            <tr>
-                                <th>Detail Project</th>
-                                <td>Pembuatan Website <b>BARU</b> untuk Kementrian Luar Negeri secara keseluruhan</td>
-                            </tr>
-                            <tr>
-                                <th>Pekerjaan</th>
-                                <td>- Fullstack Website Development <br>- Bekerja Secara TIM</td>
-                            </tr>
-                            <tr>
-                                <th>Deskripsi Singkat Pekerjaan</th>
-                                <td>
-                                    - Membuat REST.API untuk website <br>
-                                    - Membuat tampilan website <br>
-                                    - Mengintegrasikan REST.API dengan tampilan website <br>
-                                    - Penyelesaian masalah pada website <br>
-                                    - Koordinasi dengan TIM <br>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="keu-modal" role="dialog" aria-labelledby="keu-modal-label" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <img src="img/project/keu.png" alt="" class="rounded pointer img-thumbnail">
-                    <table class="table table-hover table-responsive p-5">
-                        <tbody class="text-left">
-                            <tr>
-                                <th>Nama Website</th>
-                                <td>Keuangan Menteri Luar Negeri</td>
-                            </tr>
-                            <tr>
-                                <th>Teknologi yang digunakan</th>
-                                <td>PHP (Laravel 8), Javascript (Jquery) dan Database MYSQL</td>
-                            </tr>
-                            <tr>
-                                <th>Detail Project</th>
-                                <td>Pengembangan Website untuk Kementrian Luar Negeri </td>
-                            </tr>
-                            <tr>
-                                <th>Pekerjaan</th>
-                                <td>- Fullstack Website Development <br>- Bekerja Secara TIM</td>
-                            </tr>
-                            <tr>
-                                <th>Deskripsi Singkat Pekerjaan</th>
-                                <td>
-                                    - Mengembangkan dan Memperbaiki REST.API yang belum sempurna <br>
-                                    - Mengembangkan dan Memperbaiki tampilan website belum sempurna <br>
-                                    - Memecahkan Masalah dari error/kesalahan website <br>
-                                    - Mengintegrasikan REST.API dengan tampilan website <br>
-                                    - Koordinasi dengan TIM <br>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="monol-modal" role="dialog" aria-labelledby="monol-modal-label" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <img src="img/project/monol.png" alt="" class="rounded pointer img-thumbnail">
-                    <table class="table table-hover table-responsive p-5">
-                        <tbody class="text-left">
-                            <tr>
-                                <th>Nama Website</th>
-                                <td>Monitoring Online Pengadaan PJB Services Kota Surabaya</td>
-                            </tr>
-                            <tr>
-                                <th>Teknologi yang digunakan</th>
-                                <td>PHP (Codeigniter 3), Javascript (Jquery) dan Database Oracle</td>
-                            </tr>
-                            <tr>
-                                <th>Detail Project</th>
-                                <td>Pengembangan Website MONOL PJB Services </td>
-                            </tr>
-                            <tr>
-                                <th>Pekerjaan</th>
-                                <td>- Fullstack Website Development <br>- Bekerja Secara TIM</td>
-                            </tr>
-                            <tr>
-                                <th>Deskripsi Singkat Pekerjaan</th>
-                                <td>
-                                    - Mengembangkan dan Memperbaiki REST.API yang belum sempurna <br>
-                                    - Mengembangkan dan Memperbaiki tampilan website belum sempurna <br>
-                                    - Memecahkan Masalah dari error/kesalahan website <br>
-                                    - Mengintegrasikan REST.API dengan tampilan website <br>
-                                    - Koordinasi dengan TIM <br>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="bela-modal" role="dialog" aria-labelledby="bela-modal-label"
-        aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <img src="img/project/bela.png" alt="" class="rounded pointer img-thumbnail">
-                    <table class="table table-hover table-responsive p-5">
-                        <tbody class="text-left">
-                            <tr>
-                                <th>Nama Website</th>
-                                <td>BELAPENGADAAN DATASCRIP MALL</td>
-                            </tr>
-                            <tr>
-                                <th>Teknologi yang digunakan</th>
-                                <td>PHP (Codeignter 3), Javascript (Jquery) dan Database MYSQL</td>
-                            </tr>
-                            <tr>
-                                <th>Detail Project</th>
-                                <td>Pembuatan Website <b>BARU</b> untuk perusahaan DATASCRIP secara keseluruhan</td>
-                            </tr>
-                            <tr>
-                                <th>Pekerjaan</th>
-                                <td>- Fullstack Website Development <br>- Bekerja Secara TIM</td>
-                            </tr>
-                            <tr>
-                                <th>Deskripsi Singkat Pekerjaan</th>
-                                <td>
-                                    - Membuat REST.API untuk website <br>
-                                    - Membuat tampilan website <br>
-                                    - Mengintegrasikan REST.API dengan tampilan website <br>
-                                    - Penyelesaian masalah pada website <br>
-                                    - Koordinasi dengan TIM <br>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
+/* ── REVEAL ON SCROLL ─────────────────── */
+const revealAll=document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.reveal-scale');
+const rObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')});
+},{threshold:.12});
+revealAll.forEach(el=>rObs.observe(el));
 
+/* ── COUNTERS ─────────────────────────── */
+function runCounter(el){
+  const t=parseInt(el.dataset.count);
+  const suf=t>=100?'%':'+';
+  let c=0;
+  const iv=setInterval(()=>{c=Math.min(c+Math.ceil(t/45),t);el.textContent=c+suf;if(c>=t)clearInterval(iv);},28);
+}
+const cObs=new IntersectionObserver(en=>{
+  en.forEach(e=>{if(e.isIntersecting){runCounter(e.target);cObs.unobserve(e.target);}});
+},{threshold:.5});
+document.querySelectorAll('[data-count]').forEach(el=>cObs.observe(el));
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
-    <script src="https://unpkg.com/scrollreveal"></script>
-    <script src="js/vendor/bootstrap.min.js"></script>
-    <script src="js/plugins.js"></script>
-    <script src="js/main.js"></script>
-    <script>
-        function openCity(cityName) {
-            var i;
-            var x = document.getElementsByClassName("city");
-            for (i = 0; i < x.length; i++) {
-                x[i].style.display = "none";
-            }
-            document.getElementById(cityName).style.display = "block";
-        }
-    </script>
+/* ── SERVICES STICKY NAV ──────────────── */
+const srvItems=document.querySelectorAll('.srv-item');
+const srvNavItems=document.querySelectorAll('.srv-nav-item');
+function updateSrvNav(){
+  let cur='s1';
+  srvItems.forEach(item=>{
+    const rect=item.getBoundingClientRect();
+    if(rect.top<=window.innerHeight*0.5)cur=item.id;
+  });
+  srvNavItems.forEach(n=>n.classList.toggle('on',n.dataset.target===cur));
+}
+srvNavItems.forEach(n=>{
+  n.addEventListener('click',()=>{
+    const t=document.getElementById(n.dataset.target);
+    if(t)t.scrollIntoView({behavior:'smooth',block:'center'});
+  });
+});
 
-    <script>
-        $(document).ready(function () {
-            // Add smooth scrolling to all links
-            $(".fixed-side-navbar a, .primary-button a").on('click', function (event) {
+/* ── ACTIVE NAV LINK ──────────────────── */
+const sections=document.querySelectorAll('section[id]');
+const navLinks=document.querySelectorAll('.nav-menu a');
+function highlightNav(){
+  let cur='';
+  sections.forEach(s=>{if(window.scrollY>=s.offsetTop-140)cur=s.id;});
+  navLinks.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+cur));
+}
 
-                // Make sure this.hash has a value before overriding default behavior
-                if (this.hash !== "") {
-                    // Prevent default anchor click behavior
-                    event.preventDefault();
+/* ── PRICING TOGGLE ───────────────────── */
+const ptoggle=document.getElementById('ptoggle');
+let yearly=false;
+function togglePrice(){
+  yearly=!yearly;
+  ptoggle.classList.toggle('yearly',yearly);
+  ptoggle.setAttribute('aria-checked',yearly);
+  document.querySelectorAll('.pc-amt').forEach(el=>{
+    el.textContent='Rp '+(yearly?el.dataset.retainer:el.dataset.project);
+    if(el.dataset.project==='Custom')el.textContent='Custom';
+  });
+  ['pp1','pp2','pp3'].forEach(id=>{
+    const el=document.getElementById(id);
+    if(el)el.textContent=yearly?'/ bulan':'/ project';
+  });
+}
+ptoggle.addEventListener('click',togglePrice);
+ptoggle.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' ')togglePrice();});
 
-                    // Store hash
-                    var hash = this.hash;
+/* ── WORK FILTER ──────────────────────── */
+document.querySelectorAll('.wf').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.wf').forEach(b=>b.classList.remove('on'));
+    btn.classList.add('on');
+    const f=btn.dataset.filter;
+    document.querySelectorAll('.wc').forEach(card=>{
+      const show=f==='all'||card.dataset.cat===f;
+      card.style.transition='opacity .35s,transform .35s';
+      card.style.opacity=show?'1':'0.2';
+      card.style.transform=show?'':'scale(0.95)';
+      card.style.pointerEvents=show?'':'none';
+    });
+  });
+});
 
-                    // Using jQuery's animate() method to add smooth page scroll
-                    // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-                    $('html, body').animate({
-                        scrollTop: $(hash).offset().top
-                    }, 800, function () {
+/* ── FAQ ──────────────────────────────── */
+document.querySelectorAll('.fq-q').forEach(q=>{
+  q.addEventListener('click',()=>{
+    const item=q.parentElement,ans=item.querySelector('.fq-a'),open=item.classList.contains('open');
+    document.querySelectorAll('.fq.open').forEach(i=>{i.classList.remove('open');i.querySelector('.fq-a').style.maxHeight=null;});
+    if(!open){item.classList.add('open');ans.style.maxHeight=ans.scrollHeight+'px';}
+  });
+});
 
-                        // Add hash (#) to URL when done scrolling (default click behavior)
-                        window.location.hash = hash;
-                    });
-                } // End if
-            });
-        });
-    </script>
+/* ── CONTACT FORM ─────────────────────── */
+document.getElementById('fsend').addEventListener('click',()=>{
+  const n=document.getElementById('fn').value.trim();
+  const e=document.getElementById('fe').value.trim();
+  const m=document.getElementById('fm').value.trim();
+  if(!n||!e||!m){alert('Mohon isi Nama, Email, dan Detail Project.');return;}
+  document.getElementById('cform').style.display='none';
+  document.getElementById('fsuccess').style.display='block';
+});
 
+/* ── TYPED HERO TITLE (subtle) ─────────── */
+/* hero title lines already animate via CSS */
+</script>
 </body>
-
 </html>
