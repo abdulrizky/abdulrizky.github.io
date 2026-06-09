@@ -477,7 +477,117 @@ footer{background:var(--s900);padding:64px 0 28px}
   .nav-menu,.nav-r{display:none}
   .ham{display:flex}
   .price-grid{grid-template-columns:1fr}
+  .calc-layout{grid-template-columns:1fr}
+  .cmp-table{font-size:.78rem}
+  .cmp-table th,.cmp-table td{padding:12px 10px}
 }
+
+/* ═══════════════════════════════════════════
+   COST CALCULATOR — dark Loka-style
+═══════════════════════════════════════════ */
+#calculator{
+  background:var(--s900);color:#fff;
+  padding:100px 0;position:relative;overflow:hidden
+}
+#calculator::before{
+  content:'';position:absolute;inset:0;
+  background-image:linear-gradient(rgba(59,130,246,.05) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(59,130,246,.05) 1px,transparent 1px);
+  background-size:64px 64px;pointer-events:none
+}
+#calculator::after{
+  content:'';position:absolute;
+  width:600px;height:600px;border-radius:50%;
+  background:radial-gradient(circle,rgba(59,130,246,.12),transparent 70%);
+  top:-200px;right:-100px;pointer-events:none
+}
+.calc-top{text-align:center;margin-bottom:60px;position:relative;z-index:2}
+.calc-top .chip{background:rgba(59,130,246,.18);border-color:rgba(59,130,246,.3);color:var(--b300)}
+.calc-top .h2{color:#fff}
+.calc-top .h2 em{color:var(--b400)}
+.calc-top .sub{color:rgba(255,255,255,.6);margin-inline:auto}
+
+.calc-layout{
+  display:grid;grid-template-columns:1fr 1.2fr;
+  gap:0;border-radius:24px;overflow:hidden;
+  border:1px solid rgba(59,130,246,.2);
+  position:relative;z-index:2;
+  box-shadow:0 32px 80px rgba(0,0,0,.4)
+}
+.calc-left{
+  background:rgba(255,255,255,.04);backdrop-filter:blur(12px);
+  padding:40px 36px;border-right:1px solid rgba(59,130,246,.15)
+}
+.calc-left-title{font-size:1rem;font-weight:700;color:#fff;margin-bottom:6px}
+.calc-left-sub{font-size:.82rem;color:rgba(255,255,255,.5);margin-bottom:28px}
+.calc-checks{display:flex;flex-direction:column;gap:10px;margin-bottom:28px}
+.cc{display:flex;align-items:center;gap:10px;font-size:.83rem;color:rgba(255,255,255,.65)}
+.cc::before{content:'✓';width:18px;height:18px;border-radius:50%;background:rgba(59,130,246,.25);border:1px solid rgba(59,130,246,.4);display:flex;align-items:center;justify-content:center;font-size:.65rem;font-weight:800;color:var(--b300);flex-shrink:0}
+.calc-total-box{
+  background:linear-gradient(135deg,rgba(37,99,235,.25),rgba(29,78,216,.15));
+  border:1px solid rgba(59,130,246,.3);border-radius:16px;padding:24px;margin-top:auto
+}
+.calc-total-label{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.5);margin-bottom:8px}
+.calc-total-price{font-size:2.8rem;font-weight:900;color:#fff;line-height:1;letter-spacing:-.03em}
+.calc-total-price span{font-size:1.1rem;font-weight:600;color:var(--b300);margin-left:4px}
+.calc-total-note{font-size:.75rem;color:rgba(255,255,255,.45);margin-top:8px}
+.calc-cta{display:block;text-align:center;padding:13px;border-radius:99px;background:var(--b600);color:#fff;font-weight:700;font-size:.88rem;transition:all .25s;margin-top:20px;border:none;cursor:pointer;font-family:var(--ff);width:100%}
+.calc-cta:hover{background:var(--b500);transform:translateY(-2px);box-shadow:0 8px 24px rgba(37,99,235,.5)}
+
+.calc-right{background:rgba(255,255,255,.03);padding:40px 36px}
+.calc-right-title{font-size:.9rem;font-weight:700;color:rgba(255,255,255,.9);margin-bottom:24px}
+.calc-steps{display:flex;flex-direction:column;gap:24px}
+.calc-step-q{font-size:.82rem;font-weight:600;color:rgba(255,255,255,.6);margin-bottom:10px;letter-spacing:.04em;text-transform:uppercase}
+
+/* Radio toggle groups */
+.calc-options{display:flex;flex-wrap:wrap;gap:8px}
+.calc-opt{
+  padding:9px 18px;border-radius:99px;font-size:.8rem;font-weight:600;
+  border:1.5px solid rgba(255,255,255,.12);color:rgba(255,255,255,.55);
+  cursor:pointer;transition:all .2s;background:transparent
+}
+.calc-opt:hover{border-color:var(--b400);color:var(--b300)}
+.calc-opt.on{border-color:var(--b500);color:#fff;background:rgba(59,130,246,.2)}
+
+/* Slider */
+.calc-slider-wrap{display:flex;flex-direction:column;gap:8px}
+.cslider{-webkit-appearance:none;appearance:none;width:100%;height:5px;border-radius:99px;background:rgba(255,255,255,.12);outline:none;cursor:pointer}
+.cslider::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:20px;height:20px;border-radius:50%;background:var(--b500);cursor:pointer;box-shadow:0 0 10px rgba(59,130,246,.5)}
+.cslider::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:var(--b500);cursor:pointer;border:none}
+.slider-labels{display:flex;justify-content:space-between;font-size:.72rem;color:rgba(255,255,255,.4)}
+.slider-val{font-size:.88rem;font-weight:700;color:var(--b300);text-align:right}
+
+/* Divider */
+.calc-divider{height:1px;background:rgba(59,130,246,.15);margin:20px 0}
+
+/* ═══════════════════════════════════════════
+   COMPARE — dark Loka-style
+═══════════════════════════════════════════ */
+#compare{
+  background:var(--s900);padding:80px 0 100px;
+  border-top:1px solid rgba(59,130,246,.1);
+  position:relative;z-index:1
+}
+.cmp-top{text-align:center;margin-bottom:48px}
+.cmp-top .chip{background:rgba(59,130,246,.18);border-color:rgba(59,130,246,.3);color:var(--b300)}
+.cmp-top .h2{color:#fff}
+.cmp-top .h2 em{color:var(--b400)}
+.cmp-top .sub{color:rgba(255,255,255,.55);margin-inline:auto}
+.cmp-table-wrap{overflow-x:auto;border-radius:20px;border:1px solid rgba(59,130,246,.2);position:relative}
+.cmp-table{width:100%;border-collapse:collapse;background:rgba(255,255,255,.03)}
+.cmp-table thead tr{background:rgba(59,130,246,.12)}
+.cmp-table th{padding:18px 20px;font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.7);text-align:center;border-bottom:1px solid rgba(59,130,246,.2)}
+.cmp-table th:first-child{text-align:left;color:rgba(255,255,255,.5)}
+.cmp-table th.highlight{color:var(--b300);background:rgba(37,99,235,.2)}
+.cmp-table td{padding:16px 20px;font-size:.85rem;color:rgba(255,255,255,.6);text-align:center;border-bottom:1px solid rgba(255,255,255,.05)}
+.cmp-table td:first-child{text-align:left;color:rgba(255,255,255,.75);font-weight:500}
+.cmp-table td.highlight{background:rgba(37,99,235,.07)}
+.cmp-table tr:last-child td{border-bottom:none}
+.cmp-table tr:hover td{background:rgba(255,255,255,.03)}
+.cmp-check{color:#4ade80;font-size:1.1rem}
+.cmp-cross{color:#f87171;font-size:1.1rem}
+.cmp-me{color:var(--b300);font-weight:700}
+.cmp-note{text-align:center;font-size:.78rem;color:rgba(255,255,255,.35);margin-top:20px}
 </style>
 </head>
 <body>
@@ -491,6 +601,7 @@ footer{background:var(--s900);padding:64px 0 28px}
       <li><a href="#services">Services</a></li>
       <li><a href="#work">Work</a></li>
       <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#calculator">Calculator</a></li>
       <li><a href="#platform">How It Works</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#faq">FAQ</a></li>
@@ -506,6 +617,7 @@ footer{background:var(--s900);padding:64px 0 28px}
   <a href="#services" class="ml">Services</a>
   <a href="#work" class="ml">Work</a>
   <a href="#pricing" class="ml">Pricing</a>
+  <a href="#calculator" class="ml">Calculator</a>
   <a href="#platform" class="ml">How It Works</a>
   <a href="#experience" class="ml">Experience</a>
   <a href="#faq" class="ml">FAQ</a>
@@ -539,12 +651,160 @@ footer{background:var(--s900);padding:64px 0 28px}
         </div>
       </div>
       <div class="hero-right">
-        <div class="av-wrap">
-          <div class="av-ring"><div class="av-core"><span class="av-init">ARD</span></div></div>
-          <div class="av-badge"><span>🟢</span><span class="av-badge-t">Open to Work</span></div>
-          <div class="av-chip ac1">Laravel Expert</div>
-          <div class="av-chip ac2">React · Next · RN</div>
-          <div class="av-chip ac3">DevOps Ready</div>
+        <div class="map-globe-wrap" aria-label="Project map — Java, Indonesia">
+          <!-- Globe header -->
+          <div class="map-header">
+            <span class="map-live-dot"></span>
+            <span class="map-header-text">Project Coverage — Java, Indonesia</span>
+          </div>
+          <!-- SVG Map of Java Island -->
+          <div class="map-card">
+            <svg id="javaMap" viewBox="0 0 520 210" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <!-- Java island silhouette — simplified path -->
+              <defs>
+                <linearGradient id="islandGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style="stop-color:#dbeafe"/>
+                  <stop offset="100%" style="stop-color:#bfdbfe"/>
+                </linearGradient>
+                <filter id="glow">
+                  <feGaussianBlur stdDeviation="2.5" result="coloredBlur"/>
+                  <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                </filter>
+                <radialGradient id="dotGlow" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" style="stop-color:#2563eb;stop-opacity:.5"/>
+                  <stop offset="100%" style="stop-color:#2563eb;stop-opacity:0"/>
+                </radialGradient>
+              </defs>
+              <!-- Sea background -->
+              <rect width="520" height="210" fill="#eff6ff" rx="16"/>
+              <!-- Grid lines -->
+              <g stroke="#bfdbfe" stroke-width=".5" opacity=".6">
+                <line x1="0" y1="52" x2="520" y2="52"/>
+                <line x1="0" y1="104" x2="520" y2="104"/>
+                <line x1="0" y1="156" x2="520" y2="156"/>
+                <line x1="130" y1="0" x2="130" y2="210"/>
+                <line x1="260" y1="0" x2="260" y2="210"/>
+                <line x1="390" y1="0" x2="390" y2="210"/>
+              </g>
+              <!-- Java island path (simplified realistic silhouette) -->
+              <path d="
+                M 28,105 C 32,92 42,80 55,74 C 68,68 75,72 88,68 C 100,64 108,55 122,52
+                C 136,49 148,54 160,50 C 172,46 180,38 195,36 C 210,34 220,40 232,38
+                C 244,36 252,28 265,27 C 278,26 288,32 300,31
+                C 312,30 320,24 333,23 C 346,22 356,28 368,30
+                C 380,32 390,28 400,30 C 410,32 416,40 424,45
+                C 432,50 440,48 448,52 C 456,56 460,65 464,72
+                C 468,79 470,88 468,96 C 466,104 460,110 455,116
+                C 450,122 446,128 440,132 C 434,136 427,136 420,138
+                C 413,140 408,146 400,148 C 392,150 384,146 376,148
+                C 368,150 362,156 354,158 C 346,160 338,156 330,154
+                C 322,152 315,155 307,154 C 299,153 292,148 284,146
+                C 276,144 268,146 260,144 C 252,142 245,136 237,134
+                C 229,132 221,135 213,133 C 205,131 198,125 190,122
+                C 182,119 174,121 166,118 C 158,115 152,108 144,105
+                C 136,102 128,104 120,100 C 112,96 106,88 98,85
+                C 90,82 82,86 74,83 C 66,80 60,72 52,70
+                C 44,68 36,74 30,80 C 26,86 24,96 28,105 Z
+              " fill="url(#islandGrad)" stroke="#93c5fd" stroke-width="1.5"/>
+              <!-- Madura island (small, north of Surabaya area) -->
+              <path d="M 355,52 C 362,48 372,47 380,50 C 388,53 392,60 388,65 C 384,70 376,70 368,68 C 360,66 354,60 355,52 Z" fill="#dbeafe" stroke="#93c5fd" stroke-width="1"/>
+
+              <!-- ── CITY DOTS ── -->
+              <!-- Jakarta (west) ~x:72, y:88 -->
+              <g class="city-pin" data-city="jakarta">
+                <circle cx="72" cy="88" r="18" fill="url(#dotGlow)" opacity="0" class="ping-circle"/>
+                <circle cx="72" cy="88" r="7" fill="#2563eb" filter="url(#glow)"/>
+                <circle cx="72" cy="88" r="4" fill="#fff"/>
+                <circle cx="72" cy="88" r="2" fill="#2563eb"/>
+              </g>
+              <!-- Pasuruan ~x:340, y:115 -->
+              <g class="city-pin" data-city="pasuruan">
+                <circle cx="340" cy="115" r="18" fill="url(#dotGlow)" opacity="0" class="ping-circle"/>
+                <circle cx="340" cy="115" r="7" fill="#2563eb" filter="url(#glow)"/>
+                <circle cx="340" cy="115" r="4" fill="#fff"/>
+                <circle cx="340" cy="115" r="2" fill="#2563eb"/>
+              </g>
+              <!-- Probolinggo ~x:375, y:112 -->
+              <g class="city-pin" data-city="probolinggo">
+                <circle cx="375" cy="112" r="18" fill="url(#dotGlow)" opacity="0" class="ping-circle"/>
+                <circle cx="375" cy="112" r="7" fill="#2563eb" filter="url(#glow)"/>
+                <circle cx="375" cy="112" r="4" fill="#fff"/>
+                <circle cx="375" cy="112" r="2" fill="#2563eb"/>
+              </g>
+              <!-- Jember ~x:418, y:120 -->
+              <g class="city-pin" data-city="jember">
+                <circle cx="418" cy="120" r="18" fill="url(#dotGlow)" opacity="0" class="ping-circle"/>
+                <circle cx="418" cy="120" r="7" fill="#2563eb" filter="url(#glow)"/>
+                <circle cx="418" cy="120" r="4" fill="#fff"/>
+                <circle cx="418" cy="120" r="2" fill="#2563eb"/>
+              </g>
+              <!-- Lumajang (home) ~x:395, y:122 -->
+              <g class="city-pin" data-city="lumajang">
+                <circle cx="395" cy="125" r="22" fill="url(#dotGlow)" opacity="0" class="ping-circle"/>
+                <circle cx="395" cy="125" r="9" fill="#1d4ed8" filter="url(#glow)"/>
+                <circle cx="395" cy="125" r="5" fill="#fff"/>
+                <circle cx="395" cy="125" r="3" fill="#1d4ed8"/>
+                <!-- Home crown -->
+                <path d="M 391,122 L 395,118 L 399,122 Z" fill="#1d4ed8"/>
+              </g>
+
+              <!-- Connection lines between cities -->
+              <g stroke="#93c5fd" stroke-width="1" stroke-dasharray="4 3" opacity=".7">
+                <line x1="72" y1="88" x2="340" y2="115"/>
+                <line x1="340" y1="115" x2="375" y2="112"/>
+                <line x1="375" y1="112" x2="395" y2="125"/>
+                <line x1="395" y1="125" x2="418" y2="120"/>
+              </g>
+
+              <!-- City labels -->
+              <g font-family="Poppins,sans-serif" font-weight="600" font-size="9" fill="#1e40af">
+                <text x="72" y="104">Jakarta</text>
+                <text x="318" y="132">Pasuruan</text>
+                <text x="363" y="128">Prob.</text>
+                <text x="378" y="142">Lumajang ★</text>
+                <text x="412" y="136">Jember</text>
+              </g>
+
+              <!-- Animated pulse rings on each city -->
+              <g opacity=".5">
+                <circle cx="72" cy="88" r="12" fill="none" stroke="#2563eb" stroke-width="1.5" class="map-pulse"/>
+                <circle cx="340" cy="115" r="12" fill="none" stroke="#2563eb" stroke-width="1.5" class="map-pulse" style="animation-delay:.4s"/>
+                <circle cx="375" cy="112" r="12" fill="none" stroke="#2563eb" stroke-width="1.5" class="map-pulse" style="animation-delay:.8s"/>
+                <circle cx="395" cy="125" r="12" fill="none" stroke="#1d4ed8" stroke-width="2" class="map-pulse" style="animation-delay:.2s"/>
+                <circle cx="418" cy="120" r="12" fill="none" stroke="#2563eb" stroke-width="1.5" class="map-pulse" style="animation-delay:1.2s"/>
+              </g>
+            </svg>
+
+            <!-- Tooltip -->
+            <div class="map-tooltip" id="mapTooltip"></div>
+          </div>
+
+          <!-- City legend -->
+          <div class="map-legend">
+            <div class="map-legend-item active" data-city="jakarta">
+              <span class="legend-dot"></span>Jakarta
+              <span class="legend-tag">Web · ISP</span>
+            </div>
+            <div class="map-legend-item" data-city="pasuruan">
+              <span class="legend-dot"></span>Pasuruan
+              <span class="legend-tag">Web App</span>
+            </div>
+            <div class="map-legend-item" data-city="probolinggo">
+              <span class="legend-dot"></span>Probolinggo
+              <span class="legend-tag">Mobile</span>
+            </div>
+            <div class="map-legend-item home" data-city="lumajang">
+              <span class="legend-dot home-dot"></span>Lumajang ★
+              <span class="legend-tag">Base</span>
+            </div>
+            <div class="map-legend-item" data-city="jember">
+              <span class="legend-dot"></span>Jember
+              <span class="legend-tag">Backend</span>
+            </div>
+          </div>
+          <div class="av-badge" style="position:static;margin-top:12px;animation:none;display:inline-flex">
+            <span>🟢</span><span class="av-badge-t">Open to Remote &amp; On-site</span>
+          </div>
         </div>
       </div>
     </div>
@@ -892,6 +1152,178 @@ footer{background:var(--s900);padding:64px 0 28px}
 
     </div>
     <p class="price-note reveal">Butuh sesuatu di antara paket? <span>Hubungi saya</span> — semua proyek bisa dikustomisasi. Konsultasi awal selalu gratis.</p>
+  </div>
+</section>
+
+<!-- ════════ COST CALCULATOR ════════ -->
+<section id="calculator">
+  <div class="container">
+    <div class="calc-top reveal">
+      <div class="chip"><i></i>Cost Calculator</div>
+      <h2 class="h2">Hitung <em>Estimasi Project</em></h2>
+      <p class="sub">Konfigurasi kebutuhan Anda dan dapatkan estimasi harga secara real-time.</p>
+    </div>
+
+    <div class="calc-layout reveal d1">
+      <!-- LEFT: Summary -->
+      <div class="calc-left">
+        <div class="calc-left-title">Project Summary</div>
+        <div class="calc-left-sub">Berdasarkan pilihan Anda di sebelah kanan</div>
+        <div class="calc-checks" id="calcChecks">
+          <div class="cc">Landing Page / Web App</div>
+        </div>
+        <div class="calc-total-box">
+          <div class="calc-total-label">Estimasi Biaya</div>
+          <div class="calc-total-price" id="calcPrice">Rp <span id="calcAmt">2.500.000</span></div>
+          <div class="calc-total-note" id="calcRange">Estimasi · bisa lebih rendah/tinggi tergantung detail</div>
+          <div class="calc-total-note" id="calcTimeline">⏱ Estimasi waktu: 3–7 hari kerja</div>
+        </div>
+        <a href="#contact" class="calc-cta">Mulai Diskusi Gratis →</a>
+      </div>
+
+      <!-- RIGHT: Questions -->
+      <div class="calc-right">
+        <div class="calc-right-title">⚙️ Konfigurasi Project Anda</div>
+        <div class="calc-steps">
+
+          <!-- Q1: Type -->
+          <div>
+            <div class="calc-step-q">1. Apa yang ingin dibangun?</div>
+            <div class="calc-options" id="q1">
+              <button class="calc-opt on" data-q="1" data-val="1" data-label="Landing Page" data-price="2500000" data-time="3–7 hari">Landing Page</button>
+              <button class="calc-opt" data-q="1" data-val="2" data-label="Company Profile" data-price="3500000" data-time="5–10 hari">Company Profile</button>
+              <button class="calc-opt" data-q="1" data-val="3" data-label="Web App + Backend" data-price="7500000" data-time="2–4 minggu">Web App + Backend</button>
+              <button class="calc-opt" data-q="1" data-val="4" data-label="Mobile App" data-price="8000000" data-time="3–5 minggu">Mobile App</button>
+              <button class="calc-opt" data-q="1" data-val="5" data-label="Web + Mobile" data-price="14000000" data-time="4–8 minggu">Web + Mobile</button>
+              <button class="calc-opt" data-q="1" data-val="6" data-label="E-Commerce" data-price="10000000" data-time="3–6 minggu">E-Commerce</button>
+            </div>
+          </div>
+
+          <div class="calc-divider"></div>
+
+          <!-- Q2: Complexity -->
+          <div>
+            <div class="calc-step-q">2. Kompleksitas Fitur</div>
+            <div class="calc-options" id="q2">
+              <button class="calc-opt on" data-q="2" data-val="1" data-label="Sederhana" data-mult="1.0">Sederhana</button>
+              <button class="calc-opt" data-q="2" data-val="2" data-label="Menengah" data-mult="1.4">Menengah</button>
+              <button class="calc-opt" data-q="2" data-val="3" data-label="Kompleks" data-mult="1.9">Kompleks</button>
+              <button class="calc-opt" data-q="2" data-val="4" data-label="Enterprise" data-mult="2.8">Enterprise</button>
+            </div>
+          </div>
+
+          <div class="calc-divider"></div>
+
+          <!-- Q3: Add-ons -->
+          <div>
+            <div class="calc-step-q">3. Add-on Fitur (pilih semua yang perlu)</div>
+            <div class="calc-options" id="q3" style="gap:8px">
+              <button class="calc-opt" data-q="3" data-add="500000" data-label="Payment Gateway">💳 Payment Gateway</button>
+              <button class="calc-opt" data-q="3" data-add="800000" data-label="Push Notification">🔔 Push Notification</button>
+              <button class="calc-opt" data-q="3" data-add="600000" data-label="Maps Integration">🗺️ Maps Integration</button>
+              <button class="calc-opt" data-q="3" data-add="400000" data-label="Email Automation">📧 Email Automation</button>
+              <button class="calc-opt" data-q="3" data-add="1000000" data-label="DevOps + CI/CD">⚙️ DevOps + CI/CD</button>
+              <button class="calc-opt" data-q="3" data-add="700000" data-label="Analytics Dashboard">📊 Analytics Dashboard</button>
+              <button class="calc-opt" data-q="3" data-add="500000" data-label="SEO Optimization">🔍 SEO Optimization</button>
+              <button class="calc-opt" data-q="3" data-add="300000" data-label="WhatsApp Integration">💬 WhatsApp Integration</button>
+            </div>
+          </div>
+
+          <div class="calc-divider"></div>
+
+          <!-- Q4: Pages slider -->
+          <div>
+            <div class="calc-step-q">4. Jumlah Halaman / Screens</div>
+            <div class="calc-slider-wrap">
+              <div class="slider-val" id="pageVal">5 halaman</div>
+              <input type="range" class="cslider" id="pageSlider" min="1" max="30" value="5"/>
+              <div class="slider-labels"><span>1</span><span>10</span><span>20</span><span>30+</span></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ COMPARE THE ALTERNATIVES ════════ -->
+<section id="compare">
+  <div class="container">
+    <div class="cmp-top reveal">
+      <div class="chip"><i></i>Compare</div>
+      <h2 class="h2">Compare <em>The Alternatives</em></h2>
+      <p class="sub">Kenapa hire saya sebagai freelancer adalah pilihan terbaik untuk bisnis Anda.</p>
+    </div>
+    <div class="cmp-table-wrap reveal d1">
+      <table class="cmp-table">
+        <thead>
+          <tr>
+            <th style="width:30%">Kriteria</th>
+            <th>🏢 Agency</th>
+            <th>👤 Freelancer Biasa</th>
+            <th class="highlight">⚡ Saya (Abdul Rizky)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Turnaround Time</td>
+            <td>7–30+ hari</td>
+            <td>3–10 hari</td>
+            <td class="highlight cmp-me">24–72 jam response</td>
+          </tr>
+          <tr>
+            <td>Harga</td>
+            <td>Sangat Tinggi</td>
+            <td>Rendah–Menengah</td>
+            <td class="highlight cmp-me">Kompetitif &amp; Transparan</td>
+          </tr>
+          <tr>
+            <td>Web + Mobile sekaligus</td>
+            <td><span class="cmp-check">✓</span> (2+ orang)</td>
+            <td><span class="cmp-cross">✗</span> Spesialisasi terbatas</td>
+            <td class="highlight"><span class="cmp-check">✓</span> <span class="cmp-me">1 developer</span></td>
+          </tr>
+          <tr>
+            <td>DevOps / Deploy</td>
+            <td><span class="cmp-check">✓</span> (biaya tambah)</td>
+            <td><span class="cmp-cross">✗</span> Jarang</td>
+            <td class="highlight"><span class="cmp-check cmp-me">✓</span> <span class="cmp-me">Included</span></td>
+          </tr>
+          <tr>
+            <td>Dedicated Communication</td>
+            <td><span class="cmp-cross">✗</span> Lewat PM</td>
+            <td><span class="cmp-check">✓</span> Langsung</td>
+            <td class="highlight"><span class="cmp-check cmp-me">✓</span> <span class="cmp-me">Langsung &amp; Aktif</span></td>
+          </tr>
+          <tr>
+            <td>Source Code Ownership</td>
+            <td>Tergantung kontrak</td>
+            <td><span class="cmp-check">✓</span></td>
+            <td class="highlight"><span class="cmp-check cmp-me">✓</span> <span class="cmp-me">100% milik Anda</span></td>
+          </tr>
+          <tr>
+            <td>Post-launch Support</td>
+            <td><span class="cmp-check">✓</span> (berbayar)</td>
+            <td><span class="cmp-cross">✗</span> Tidak pasti</td>
+            <td class="highlight"><span class="cmp-check cmp-me">✓</span> <span class="cmp-me">Garansi bug + retainer</span></td>
+          </tr>
+          <tr>
+            <td>Failure Rate</td>
+            <td>Rendah</td>
+            <td>Tinggi</td>
+            <td class="highlight cmp-me">Sangat Rendah</td>
+          </tr>
+          <tr>
+            <td>Rata-rata Biaya / Bulan</td>
+            <td>Rp 15jt+</td>
+            <td>Rp 3jt–8jt</td>
+            <td class="highlight cmp-me">Rp 5,5jt (retainer)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="cmp-note reveal">* Perbandingan berdasarkan riset pasar freelancer &amp; agency Indonesia 2025</p>
   </div>
 </section>
 
@@ -1274,8 +1706,91 @@ document.getElementById('fsend').addEventListener('click',()=>{
   document.getElementById('fsuccess').style.display='block';
 });
 
-/* ── TYPED HERO TITLE (subtle) ─────────── */
-/* hero title lines already animate via CSS */
+/* ── COST CALCULATOR ──────────────────── */
+(function(){
+  // State
+  let basePrice = 2500000;
+  let multiplier = 1.0;
+  let addOns = {};
+  let pages = 5;
+  let baseTime = '3–7 hari';
+  let baseLabel = 'Landing Page';
+
+  function fmt(n){
+    if(n>=1000000000) return (n/1000000000).toFixed(1).replace('.0','')+'M';
+    if(n>=1000000) return (n/1000000).toFixed(1).replace('.0','')+'jt';
+    return n.toLocaleString('id-ID');
+  }
+
+  function calcTotal(){
+    const addOnSum = Object.values(addOns).reduce((a,b)=>a+b,0);
+    const pageFactor = pages <= 5 ? 1 : pages <= 10 ? 1.15 : pages <= 20 ? 1.3 : 1.5;
+    const total = Math.round((basePrice * multiplier + addOnSum) * pageFactor / 100000) * 100000;
+    const high = Math.round(total * 1.3 / 100000) * 100000;
+    document.getElementById('calcAmt').textContent = fmt(total);
+    document.getElementById('calcRange').textContent = 'Kisaran Rp '+fmt(total)+' – Rp '+fmt(high);
+    document.getElementById('calcTimeline').textContent = '⏱ Estimasi waktu: '+baseTime;
+
+    // Update checks
+    const checks = document.getElementById('calcChecks');
+    const addOnLabels = Object.keys(addOns).map(k=>'+ '+k);
+    const allItems = [baseLabel, 'Kompleksitas: '+document.querySelector('#q2 .calc-opt.on')?.dataset.label, 'Halaman: '+pages].concat(addOnLabels).filter(Boolean);
+    checks.innerHTML = allItems.map(t=>'<div class="cc">'+t+'</div>').join('');
+  }
+
+  // Q1 — type
+  document.querySelectorAll('#q1 .calc-opt').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      document.querySelectorAll('#q1 .calc-opt').forEach(b=>b.classList.remove('on'));
+      btn.classList.add('on');
+      basePrice = parseInt(btn.dataset.price);
+      baseTime = btn.dataset.time;
+      baseLabel = btn.dataset.label;
+      calcTotal();
+    });
+  });
+
+  // Q2 — multiplier
+  document.querySelectorAll('#q2 .calc-opt').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      document.querySelectorAll('#q2 .calc-opt').forEach(b=>b.classList.remove('on'));
+      btn.classList.add('on');
+      multiplier = parseFloat(btn.dataset.mult);
+      calcTotal();
+    });
+  });
+
+  // Q3 — add-ons (toggle)
+  document.querySelectorAll('#q3 .calc-opt').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      btn.classList.toggle('on');
+      const label = btn.dataset.label;
+      if(btn.classList.contains('on')){
+        addOns[label] = parseInt(btn.dataset.add);
+      } else {
+        delete addOns[label];
+      }
+      calcTotal();
+    });
+  });
+
+  // Q4 — pages slider
+  const slider = document.getElementById('pageSlider');
+  if(slider){
+    slider.addEventListener('input',()=>{
+      pages = parseInt(slider.value);
+      document.getElementById('pageVal').textContent = pages + (pages>=30?'+':'')+' halaman';
+      calcTotal();
+    });
+  }
+
+  // Animate price on scroll into view
+  const calcObs = new IntersectionObserver(entries=>{
+    entries.forEach(e=>{if(e.isIntersecting){calcTotal();calcObs.disconnect();}});
+  },{threshold:.2});
+  const calcEl = document.getElementById('calculator');
+  if(calcEl) calcObs.observe(calcEl);
+})();
 </script>
 </body>
 </html>
