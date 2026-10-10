@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AGO : Website Dev - Aplikasi dan Website Murah, Dibantu Sampai Jalan</title>
+<meta name="description" content="Source code aplikasi dan website berbasis web mulai Rp99.000. Untuk sekolah, desa, kesehatan, kantor, dan usaha. Bisa dibantu install, hosting, dan perawatan bulanan.">
+<link rel="icon" href="assets/ago-mark.svg">
+<link rel="canonical" href="https://abdulrizky.github.io/ago/">
+<meta property="og:title" content="AGO : Website Dev - Aplikasi dan Website Murah">
+<meta property="og:description" content="Source code aplikasi dan website mulai Rp99.000. Bisa dibantu install, hosting, dan perawatan bulanan.">
+<meta property="og:image" content="https://abdulrizky.github.io/ago/assets/aset_sekolah.jpg">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#17375A;--deep:#0E2136;--aqua:#5EC2DB;--aquad:#2A9CBF;--ice:#EFF8F8;--mist:#D5ECF1;--price:#FFB627;--pink:#3A2600;--ink:#17375A;--muted:#4b6178;--line:#cfe3ea;--wa:#25D366}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font:16px/1.6 "Plus Jakarta Sans","Avenir Next",system-ui,sans-serif;color:var(--ink);background:var(--ice)}
+img{max-width:100%;display:block}a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding-inline:20px}
+h1,h2,h3{margin:0;line-height:1.12;letter-spacing:-.02em;text-wrap:balance}
+h2{font-size:clamp(26px,4vw,38px);font-weight:800}
+.eyebrow{font:800 12.5px/1 inherit;letter-spacing:.16em;text-transform:uppercase;color:var(--aquad)}
+.lede{color:var(--muted);max-width:62ch;margin:10px 0 0}
+section{padding-block:64px}
+.btn{display:inline-flex;align-items:center;gap:10px;border-radius:999px;padding:13px 22px;font-weight:800;text-decoration:none;border:2px solid transparent}
+.btn.wa{background:var(--wa);color:#062b14}.btn.ghost{border-color:rgba(255,255,255,.35);color:#fff}.btn.navy{background:var(--navy);color:#fff}
+.btn:focus-visible,a:focus-visible,button:focus-visible{outline:3px solid var(--price);outline-offset:3px}
+/* header */
+header{position:sticky;top:0;z-index:10;background:rgba(14,33,54,.96);color:#fff}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:12px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;text-decoration:none}.brand img{height:34px}
+.nav nav{display:flex;gap:22px;font-weight:600;font-size:14.5px}.nav nav a{text-decoration:none;opacity:.85}.nav nav a:hover{opacity:1}
+.nav .btn{padding:9px 16px;font-size:14px}
+/* hero */
+.hero{background:radial-gradient(900px 600px at 85% 0%,rgba(94,194,219,.22),transparent 60%),linear-gradient(160deg,#17375A,#0E2136 70%);color:#fff;padding-block:72px 88px}
+.hero .grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:44px;align-items:center}
+.hero h1{font-size:clamp(34px,5.6vw,60px);font-weight:800}.hero h1 em{font-style:normal;color:var(--aqua)}
+.hero p{color:#cfe6ee;font-size:18px;max-width:52ch;margin:18px 0 26px}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px;padding:0;list-style:none}
+.pills li{border:1.5px solid rgba(255,255,255,.22);border-radius:999px;padding:6px 14px;font-size:14px;font-weight:600}
+.pills b{color:var(--price)}
+.shotstack{position:relative;aspect-ratio:16/11}
+.shotstack img{position:absolute;border-radius:12px;box-shadow:0 30px 60px rgba(0,0,0,.45);border:6px solid #0b1a2b}
+.shotstack img:nth-child(1){width:78%;right:0;top:0;transform:rotate(3deg)}.shotstack img:nth-child(2){width:82%;left:0;bottom:0;transform:rotate(-2deg)}
+/* katalog */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:26px 0 22px}
+.chip{border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:8px 15px;font:600 14px inherit;color:var(--navy);cursor:pointer}
+.chip[aria-pressed=true]{background:var(--navy);border-color:var(--navy);color:#fff}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+.card{background:#fff;border-radius:18px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 10px 30px rgba(14,33,54,.08)}
+.card .shot{aspect-ratio:16/9;height:auto;background:var(--mist);object-fit:cover;object-position:top left;width:100%}
+.card .body{padding:18px 18px 20px;display:flex;flex-direction:column;gap:10px;flex:1}
+.card .cat{font:800 11.5px/1 inherit;letter-spacing:.12em;text-transform:uppercase;color:var(--aquad)}
+.card h3{font-size:20px;font-weight:800}
+.card ul{margin:0;padding:0;list-style:none;display:grid;gap:5px;font-size:14.5px;color:var(--muted)}
+.card li::before{content:"\2713";color:var(--aquad);font-weight:800;margin-right:8px}
+.prow{display:flex;align-items:baseline;gap:10px;margin-top:auto;padding-top:6px}
+.pr{background:var(--price);color:var(--pink);font-weight:800;font-size:20px;border-radius:10px;padding:4px 12px}
+.pr small{font-size:12px;font-weight:700;margin-right:6px}.strike{color:#8a9aab;text-decoration:line-through;font-weight:600;font-size:14px}
+.card .acts{display:flex;gap:8px;flex-wrap:wrap}.card .btn{padding:10px 16px;font-size:14px}
+.btn.line{border-color:var(--line);color:var(--navy)}
+.more{margin-top:26px;background:#fff;border:1.5px dashed var(--line);border-radius:18px;padding:22px;display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between}
+/* paket */
+.dark{background:var(--deep);color:#fff}.dark .lede{color:#bcd6e2}.dark .eyebrow{color:var(--aqua)}
+.plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;margin-top:30px}
+.plan{background:#fff;color:var(--ink);border-radius:20px;padding:26px 24px;display:flex;flex-direction:column;gap:12px;position:relative}
+.plan.hot{background:var(--navy);color:#fff;outline:3px solid var(--aqua)}
+.plan h3{font-size:22px;font-weight:800}.plan .sub{color:var(--muted);font-size:14.5px;min-height:2.9em}.plan.hot .sub{color:#bfe3ee}
+.plan .amt{font-size:34px;font-weight:800;letter-spacing:-.02em}.plan .amt small{font-size:14px;font-weight:600;color:var(--muted)}.plan.hot .amt{color:var(--price)}.plan.hot .amt small{color:#bfe3ee}
+.plan ul{margin:0;padding:0;list-style:none;display:grid;gap:8px;font-size:14.5px}
+.plan li::before{content:"\2713";color:var(--aquad);font-weight:800;margin-right:8px}.plan.hot li::before{color:var(--aqua)}
+.badge{position:absolute;top:-13px;right:20px;background:var(--price);color:var(--pink);font:800 11.5px/1 inherit;letter-spacing:.1em;text-transform:uppercase;border-radius:999px;padding:7px 12px}
+.note{font-size:13.5px;color:#9fb6c9;margin-top:18px;max-width:75ch}
+/* promo */
+.promo{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin-top:28px}
+.pbox{background:#fff;border-radius:20px;padding:26px;border-left:8px solid var(--price);display:grid;gap:10px;align-content:start}
+.pbox h3{font-size:22px;font-weight:800}.pbox p{margin:0;color:var(--muted)}
+/* langkah & faq */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:28px;counter-reset:s;padding:0;list-style:none}
+.steps li{background:#fff;border-radius:18px;padding:22px;counter-increment:s}
+.steps li::before{content:counter(s);display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--navy);color:#fff;font-weight:800;margin-bottom:10px}
+.steps b{display:block;font-size:17px}.steps span{color:var(--muted);font-size:14.5px}
+details{background:#fff;border-radius:14px;padding:16px 20px;margin-top:10px}summary{font-weight:700;cursor:pointer}details p{margin:10px 0 0;color:var(--muted)}
+footer{background:var(--deep);color:#bcd6e2;padding-block:40px;font-size:14.5px}
+footer .f{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:center}
+footer a{color:#fff;font-weight:700;text-decoration:none}
+.fab{position:fixed;right:18px;bottom:18px;z-index:20;box-shadow:0 14px 30px rgba(0,0,0,.3)}
+@media (max-width:820px){.hero .grid{grid-template-columns:1fr}.shotstack{order:-1;max-width:520px}.nav nav{display:none}section{padding-block:48px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+  <a class="brand" href="#top"><img src="assets/ago-mark-white.svg" alt="">AGO : Website Dev</a>
+  <nav aria-label="Menu"><a href="#katalog">Katalog</a><a href="#paket">Paket</a><a href="#langganan">Hosting &amp; perawatan</a><a href="#promo">Promo</a><a href="#faq">Tanya jawab</a></nav>
+  <a class="btn wa" data-wa="Halo AGO, saya mau tanya soal aplikasi/website.">Chat WA</a>
+</div></header>
+
+<main id="top">
+<div class="hero"><div class="wrap grid">
+  <div>
+    <div class="eyebrow" style="color:var(--aqua)">Aplikasi dan website berbasis web</div>
+    <h1>Aplikasi dan website murah, <em>dibantu sampai jalan</em></h1>
+    <p>Pilih aplikasi yang sudah jadi untuk sekolah, desa, layanan kesehatan, kantor, atau usaha Anda. Kami bantu pasang, online-kan, dan rawat tiap bulan, jadi Anda tidak perlu paham teknis.</p>
+    <div class="cta"><a class="btn wa" data-wa="Halo AGO, saya mau konsultasi gratis soal aplikasi/website.">Konsultasi gratis via WhatsApp</a><a class="btn ghost" href="#katalog">Lihat katalog</a></div>
+    <ul class="pills"><li>Mulai <b>Rp99.000</b></li><li>Online mulai <b>Rp39rb/bulan</b></li><li>600+ pilihan aplikasi</li><li>Free konsultasi</li></ul>
+  </div>
+  <div class="shotstack" aria-hidden="true"><img src="assets/aset_sekolah.jpg" alt=""><img src="assets/ecommerce.jpg" alt=""></div>
+</div></div>
+
+<section id="katalog"><div class="wrap">
+  <div class="eyebrow">Katalog</div>
+  <h2>Aplikasi yang sudah ada video demonya</h2>
+  <p class="lede">Semua sudah diuji dengan data contoh. Klik chat untuk tanya fitur, minta demo video, atau minta disesuaikan.</p>
+  <div class="filters" id="filters" role="group" aria-label="Kategori"></div>
+  <div class="cards" id="cards"></div>
+  <div class="more"><div><b>Butuh aplikasi lain?</b><br><span style="color:var(--muted)">Masih ada ratusan aplikasi lain di katalog kami: PPDB, SPP, perpustakaan, klinik, koperasi, surat desa, dan lainnya.</span></div><a class="btn navy" data-wa="Halo AGO, saya cari aplikasi untuk: ">Tanya ketersediaan</a></div>
+</div></section>
+
+<section id="paket" class="dark"><div class="wrap">
+  <div class="eyebrow">Paket beli putus</div>
+  <h2>Bayar sekali, aplikasinya milik Anda</h2>
+  <p class="lede">Harga mengikuti ukuran aplikasi: Rp99.000, Rp149.000, atau Rp249.000.</p>
+  <div class="plans">
+    <div class="plan"><h3>Hemat</h3><div class="sub">Untuk yang bisa memasang sendiri.</div><div class="amt"><small>mulai </small>Rp99rb</div><ul><li>Source code lengkap</li><li>Database dan data contoh</li><li>Panduan instalasi</li><li>Tanya jawab lewat WA</li></ul></div>
+    <div class="plan hot"><span class="badge">Paling dipilih</span><h3>Siap Pakai</h3><div class="sub">Kami pasangkan sampai jalan di laptop Anda.</div><div class="amt"><small>mulai </small>Rp149rb</div><ul><li>Semua isi paket Hemat</li><li>Dibantu install jarak jauh</li><li>Dicek sampai aplikasi jalan</li><li>Ganti nama dan logo</li></ul></div>
+    <div class="plan"><h3>Borongan</h3><div class="sub">Lebih hemat untuk beberapa aplikasi.</div><div class="amt">Rp299rb<small> / 3 aplikasi</small></div><ul><li>Bebas pilih 3 aplikasi</li><li>5 aplikasi Rp449rb</li><li>Panduan instalasi tiap aplikasi</li></ul></div>
+  </div>
+</div></section>
+
+<section id="langganan"><div class="wrap">
+  <div class="eyebrow">Hosting dan perawatan</div>
+  <h2>Mau langsung online dan ada yang merawat?</h2>
+  <p class="lede">Aplikasi dipasang di internet dengan alamat sendiri, lalu kami yang menjaga tetap jalan. Bisa berhenti kapan saja.</p>
+  <div class="plans">
+    <div class="plan"><h3>Online</h3><div class="sub">Aplikasi bisa dibuka dari mana saja.</div><div class="amt">Rp39rb<small> / bulan</small></div><ul><li>Hosting dan alamat website</li><li>Pemasangan dan keamanan (SSL)</li><li>Backup data tiap bulan</li><li>Dibayar per tahun</li></ul><a class="btn navy" data-wa="Halo AGO, saya tertarik paket Online (hosting).">Tanya paket ini</a></div>
+    <div class="plan hot"><span class="badge">Terima beres</span><h3>Rawat</h3><div class="sub">Ada yang memperbaiki kalau ada masalah.</div><div class="amt">Rp79rb<small> / bulan</small></div><ul><li>Semua isi paket Online</li><li>Perbaikan error tanpa biaya tambahan</li><li>1 perubahan kecil tiap bulan</li><li>Backup tiap minggu</li></ul><a class="btn wa" data-wa="Halo AGO, saya tertarik paket Rawat (hosting + perawatan).">Tanya paket ini</a></div>
+    <div class="plan"><h3>Instansi</h3><div class="sub">Untuk sekolah, desa, dan kantor.</div><div class="amt">Rp149rb<small> / bulan</small></div><ul><li>Semua isi paket Rawat</li><li>Alamat .sch.id, .desa.id, atau .com</li><li>3 perubahan kecil tiap bulan</li><li>Pelatihan pemakaian untuk operator</li></ul><a class="btn navy" data-wa="Halo AGO, saya tertarik paket Instansi.">Tanya paket ini</a></div>
+  </div>
+  <p class="note" style="color:var(--muted)">Harga langganan belum termasuk harga aplikasinya. Biaya pendaftaran domain khusus instansi mengikuti ketentuan pengelola domain.</p>
+</div></section>
+
+<section id="promo" class="dark"><div class="wrap">
+  <div class="eyebrow">Promo</div>
+  <h2>Coba dulu, atau ajak teman</h2>
+  <div class="promo">
+    <div class="pbox"><h3 style="color:var(--navy)">Gratis: Aplikasi Kasir Kedai Kopi</h3><p>Source code lengkap dengan database dan data contoh, gratis. Cukup chat WhatsApp dan follow Instagram @ago_idn.</p><a class="btn wa" data-wa="Halo AGO, saya mau klaim aplikasi Kasir Kedai Kopi GRATIS.">Klaim gratis</a></div>
+    <div class="pbox"><h3 style="color:var(--navy)">Ajak teman, dapat komisi</h3><p>Rekomendasikan AGO ke sekolah, desa, kantor, atau teman usaha. Setiap pembelian dari rekomendasi Anda, Anda dapat komisi.</p><a class="btn navy" data-wa="Halo AGO, saya mau ikut program ajak teman.">Tanya caranya</a></div>
+  </div>
+</div></section>
+
+<section id="order"><div class="wrap">
+  <div class="eyebrow">Cara order</div>
+  <h2>Tiga langkah saja</h2>
+  <ol class="steps"><li><b>Pilih aplikasi</b><span>Lihat katalog dan video demonya di YouTube AGO : Website Dev.</span></li><li><b>Chat WhatsApp</b><span>Sebutkan nama aplikasinya. Konsultasi gratis, tanya dulu boleh.</span></li><li><b>Terima dan pakai</b><span>File dan panduan dikirim. Paket Siap Pakai dan langganan kami pasangkan.</span></li></ol>
+</div></section>
+
+<section id="faq" style="padding-top:0"><div class="wrap">
+  <div class="eyebrow">Tanya jawab</div>
+  <h2>Yang sering ditanyakan</h2>
+  <details><summary>Saya tidak paham teknis, bisa pakai?</summary><p>Bisa. Pilih paket Siap Pakai supaya kami yang memasang, atau paket langganan supaya aplikasinya langsung online dan kami rawat.</p></details>
+  <details><summary>Bisa ganti nama, logo, atau tambah fitur?</summary><p>Bisa. Ganti nama dan logo sudah termasuk di paket Siap Pakai. Tambahan fitur dibicarakan dulu lewat chat.</p></details>
+  <details><summary>Apa bedanya beli putus dan langganan?</summary><p>Beli putus: Anda menerima file aplikasinya dan menjalankannya sendiri. Langganan: aplikasinya kami pasang di internet dan kami rawat tiap bulan.</p></details>
+  <details><summary>Bagaimana cara bayar?</summary><p>Transfer bank atau dompet digital. Detailnya dikirim lewat WhatsApp setelah Anda memilih aplikasi dan paket.</p></details>
+</div></section>
+</main>
+
+<footer><div class="wrap f">
+  <div><b style="color:#fff">AGO : Website Dev</b><br>Aplikasi dan website berbasis web, jasa pembuatan website.</div>
+  <div>WhatsApp <a data-wa="Halo AGO">0819-5829-9720</a> &nbsp;·&nbsp; Instagram <a href="https://instagram.com/ago_idn" rel="noopener">@ago_idn</a> &nbsp;·&nbsp; <a href="https://youtube.com/@ago_idn" rel="noopener">YouTube</a></div>
+</div></footer>
+<a class="btn wa fab" data-wa="Halo AGO, saya mau tanya.">Chat WA</a>
+
+<script>
+const WA="6281958299720";
+const APPS=[{"slug": "aset_sekolah", "name": "Sistem Informasi Aset Sekolah", "cat": "Sekolah & Pendidikan", "price": 149000, "strike": 400000, "features": ["Data Barang & Kondisi", "Cetak Label Barang PDF", "Ekspor & Impor Excel", "Ruangan & Asal Anggaran"], "yt": ""}, {"slug": "si_smk", "name": "Sistem Informasi SMK", "cat": "Sekolah & Pendidikan", "price": 149000, "strike": 650000, "features": ["Data Kelas & Siswa", "Catat Pembayaran SPP", "Kelola Berita & Agenda", "Galeri Foto Sekolah"], "yt": ""}, {"slug": "si_kampung", "name": "Sistem Informasi Desa", "cat": "Desa & Pemerintahan", "price": 149000, "strike": 500000, "features": ["Data Penduduk & Keluarga", "Aduan Warga Berfoto", "Catatan Dana Desa", "Agenda Kegiatan Desa"], "yt": ""}, {"slug": "kota_sehat", "name": "Sistem Informasi Kota Sehat", "cat": "Kesehatan", "price": 149000, "strike": 1400000, "features": ["Penilaian 9 Tatanan Kota Sehat", "Lampiran PDF & Foto Kegiatan", "Kelembagaan Kota sampai Kelurahan", "Pendanaan & Catatan Pembinaan"], "yt": ""}, {"slug": "gis_stunting", "name": "Sistem Informasi Geografis Sebaran Stunting", "cat": "Kesehatan", "price": 249000, "strike": 400000, "features": ["Peta Sebaran per Kelurahan", "Rekap Status Gizi per Kecamatan", "Tabel Data Kasus per Tahun", "Kelola Wilayah & Puskesmas"], "yt": ""}, {"slug": "gizi_bayi", "name": "Monitoring Gizi Balita Posyandu", "cat": "Kesehatan", "price": 149000, "strike": 300000, "features": ["Data Posyandu & Balita", "Catat Status Gizi Balita", "Laporan Penimbangan Bulanan", "Peringkat Posyandu Otomatis"], "yt": ""}, {"slug": "akuntansi", "name": "Pembukuan Usaha Properti", "cat": "Bisnis & Perkantoran", "price": 149000, "strike": 600000, "features": ["Catat Pengeluaran & Hutang", "Penjualan Rumah & Angsuran", "Kontraktor & Stok Material", "Laporan Keuangan + Cetak"], "yt": ""}, {"slug": "manajemen_kendaraan", "name": "Sistem Informasi Manajemen Kendaraan", "cat": "Bisnis & Perkantoran", "price": 149000, "strike": 300000, "features": ["Peminjaman Kendaraan & Antrian Otomatis", "Data Aset, Pajak, STNK & Asuransi", "Riwayat Service & Kalender Jatuh Tempo", "Reimbursement BBM & Rekap Ekspor"], "yt": ""}, {"slug": "aplikasi_absensi", "name": "Aplikasi Absensi", "cat": "Bisnis & Perkantoran", "price": 99000, "strike": 0, "features": ["Form Absensi Karyawan", "Rekap Hadir, Izin, Sakit, Cuti", "Pengajuan & Persetujuan Cuti", "Cetak Laporan Absensi PDF"], "yt": ""}, {"slug": "laundry", "name": "Aplikasi Pelayanan Laundry", "cat": "Layanan & Booking", "price": 149000, "strike": 450000, "features": ["Input Order Kiloan & Satuan", "Status Cucian & Akun Member", "Cetak Bukti Transaksi", "Poin, Voucher & Laporan PDF"], "yt": ""}, {"slug": "kasir_kopi", "name": "Kasir Kedai Kopi", "cat": "Kasir & Toko", "price": 99000, "strike": 350000, "features": ["Transaksi Kasir", "Kelola Menu & Stok", "Laporan Excel & PDF", "3 Hak Akses + Log"], "yt": "84lzbtcyrkI"}, {"slug": "pos_coffeeshop", "name": "Kasir Coffee Shop", "cat": "Kasir & Toko", "price": 99000, "strike": 500000, "features": ["Catat Pesanan per Meja", "Konfirmasi Pembayaran", "Kelola Menu & Stok", "Ekspor PDF & Excel"], "yt": ""}, {"slug": "kasir_kafe_kopi", "name": "Pemesanan Kafe Kopi", "cat": "Kasir & Toko", "price": 99000, "strike": 0, "features": ["Pesan Menu dari Meja", "Keranjang Banyak Menu", "Status Pesanan & Pembayaran", "Dashboard Grafik Pendapatan"], "yt": ""}, {"slug": "ecommerce", "name": "Toko Online Desain Menarik", "cat": "E-commerce & Marketplace", "price": 149000, "strike": 400000, "features": ["Katalog Produk Berfoto", "Keranjang Belanja Otomatis", "Checkout & Pilihan Kurir", "Kelola Produk, Kategori, Stok"], "yt": ""}];
+const rp=n=>"Rp"+n.toLocaleString("id-ID");
+const wa=t=>"https://wa.me/"+WA+"?text="+encodeURIComponent(t);
+document.querySelectorAll("[data-wa]").forEach(a=>{a.href=wa(a.dataset.wa);a.target="_blank";a.rel="noopener"});
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const cats=["Semua",...new Set(APPS.map(a=>a.cat))];let cur="Semua";
+const F=document.getElementById("filters"),C=document.getElementById("cards");
+function draw(){
+  F.innerHTML=cats.map(c=>`<button class="chip" aria-pressed="${c===cur}" data-c="${esc(c)}">${esc(c)}</button>`).join("");
+  C.innerHTML=APPS.filter(a=>cur==="Semua"||a.cat===cur).map(a=>`<article class="card">
+    <img class="shot" src="assets/${a.slug}.jpg" alt="Tampilan ${esc(a.name)}" loading="lazy" width="960" height="540">
+    <div class="body"><div class="cat">${esc(a.cat)}</div><h3>${esc(a.name)}</h3>
+    <ul>${a.features.map(f=>`<li>${esc(f)}</li>`).join("")}</ul>
+    <div class="prow"><span class="pr"><small>mulai</small>${rp(a.price)}</span>${a.strike?`<span class="strike">${rp(a.strike)}</span>`:""}</div>
+    <div class="acts"><a class="btn wa" target="_blank" rel="noopener" href="${wa("Halo AGO, saya tertarik dengan "+a.name+".")}">Chat WA</a>${a.yt?`<a class="btn line" target="_blank" rel="noopener" href="https://youtu.be/${a.yt}">Lihat demo</a>`:""}</div></div></article>`).join("");
+}
+F.addEventListener("click",e=>{const b=e.target.closest("[data-c]");if(b){cur=b.dataset.c;draw()}});
+draw();
+</script>
+</body>
+</html>
